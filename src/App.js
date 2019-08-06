@@ -1,12 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'normalize.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Header from './Header';
+import Home from './Home';
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+      <BrowserRouter>
+        <div classname="App">
+        <Header />
+        <Route path='/' exact component={Home} />
+      </div>
+      </BrowserRouter> 
   );
 }
 
