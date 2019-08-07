@@ -115,10 +115,13 @@ const StyledInput = styled.input`
     border: none;
     height: 3rem;
     padding-left: 1rem;
-    margin-right: 0.2rem;
+    margin-right: 0.3rem;
     &:placeholder {
         color: #A0B0B9;
+        font-size: 16px;
+        line-height: 20px;
     }
+    
 `;
 const FromInput = styled(StyledInput)`
     max-width: 14rem;
@@ -131,7 +134,7 @@ const Icon = styled.img`
     position: absolute;
     width: 1rem;
     height: 1.125rem;
-    right: 1rem;
+    right: 1.5rem;
     top: 1rem;
 `;
 
@@ -152,6 +155,8 @@ const DatePickerBack = styled(StyledInput)`
 const Passangers = styled(StyledInput)`
     max-width: 13.25rem;
     border-radius: 0 0.3rem 0.3rem 0;
+    padding-right: 2rem;
+    cursor: pointer;
 `;
 
 const DateIcon = styled(Icon)``;
@@ -170,7 +175,7 @@ const CustomFormContainer = styled(FormContainer)`
 const SearchButton = styled.a`
     background: #FF9241;
     color: white;
-    border: none;
+    border: 0;
     border-radius: 0.25rem;
     font-style: normal;
     font-weight: 600;
@@ -181,15 +186,15 @@ const SearchButton = styled.a`
     padding-top: 0.9375rem;
     padding-bottom: 1rem;
     padding-right: 4.625rem;
-    text-decoration: none; 
+    text-decoration: none;
 `;
 
 const PlaneIcon = styled(Icon)`
     width: 1.585rem;
     height: 1.305rem;
     top: 1.4rem;
-    margin-left: 15rem;
-    right: initial;
+    right: 2.5rem;
+    position: relative;
 `;
 
 export default () => {
@@ -202,11 +207,11 @@ export default () => {
                 <HeaderTitleForm>Лучший способ купить авиабилеты дешево</HeaderTitleForm>
                 <FormWrapper>
                     <FormContainer>
-                        <FromInput placeholder="Город отправления"/>
+                        <FromInput placeholder="Отправление"/>
                         <ArrowIcon alt='Arrow' src={arrow} />
                     </FormContainer>
                    <FormContainer>
-                        <ToInput placeholder="Город прибытия"/>
+                        <ToInput placeholder="Прибытие"/>
                     </FormContainer>
                     <FormContainer>
                         <DatePickerTo placeholder="Туда" />
