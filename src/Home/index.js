@@ -74,7 +74,7 @@ const TravelIconContainer = styled.div`
     width: 3rem;
     height: 3rem;
     position: absolute;
-    box-shadow: 0px 0.25rem 1 rgba(74, 74, 74, 0.12);
+    box-shadow: 0px 0.25rem 1rem rgba(74, 74, 74, 0.12);
     border-radius: 50%;
     background: #FFFFFF;
 `;
