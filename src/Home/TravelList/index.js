@@ -10,6 +10,9 @@ import cult from './cult.svg';
 import night from './night.svg';
 import kids from './kids.svg';
 
+import krasnodar from './krasnodar.jpg';
+import russia from './russia.svg'
+
 const HomeWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -68,6 +71,31 @@ const TravelItemTitle = styled.a`
     text-decoration: none;
     text-transform: uppercase;
     margin-top: 8rem;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: #00ACE2;
+        visibility: hidden;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: .25s linear;
+    }
+    &:hover {
+        color: #5C5C5C;
+    }
+    &:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+    &:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
 `;
 
 const TravelIconContainer = styled.div`
@@ -84,6 +112,107 @@ const TravelIcon = styled.img`
     left: 0.8125rem;
     top: 0.8125rem;
 `;
+
+const TopDestinationsWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 3.4375rem;
+    max-width: 65rem;
+`;
+
+const TopDestinationCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 12px rgba(0, 75, 93, 0.12);
+    margin-bottom: 1.9375rem;
+    &:nth-child(odd) {
+        margin-right: 0.95875rem;
+    }
+`;
+
+const TopDestinationImage = styled.img`
+    max-width: 31.875rem;
+    max-height: 13.25rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+`;
+
+const TopDestinationCaption = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 5.125rem;
+`;
+
+const CaptionColumn = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 15.9375rem;
+`;
+
+const Flag = styled.img `
+    margin-left: 0.75rem;
+`;
+
+const DestinationTitle = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+`;
+
+const DestinationCity = styled.p`
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 32px;
+    color: #5B5B5C;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+`;
+
+const DestinationCountry = styled.p`
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #A0B0B9;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+`;
+
+const DestinationTitleReversed = styled(DestinationTitle)`
+    align-items: flex-end;
+    margin-right: 1.5rem;
+`;
+
+const DestinationPrices = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 32px;
+    color: #00BAE8;
+    margin-bottom: 0;
+    margin-top: 2rem;
+`;
+
+const DestinationDate = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #A0B0B9;
+    margin-bottom: 2rem;
+    margin-top: 0;
+`;
+
 export default () => {
     return (
         <HomeWrapper>
@@ -106,33 +235,53 @@ export default () => {
                     <TravelIconContainer>
                         <TravelIcon alt="Palm" src={palm}/>
                     </TravelIconContainer>
-                    <TravelItemTitle>Солнце<br />и море</TravelItemTitle>  
+                    <TravelItemTitle href="#">Солнце<br />и море</TravelItemTitle>  
                 </TravelItem>
                 <TravelItem>
                     <TravelIconContainer>
                         <TravelIcon alt="Shop" src={shop}/>
                     </TravelIconContainer>
-                    <TravelItemTitle>Шопинг, <br />город</TravelItemTitle>  
+                    <TravelItemTitle href="#">Шопинг, <br />город</TravelItemTitle>  
                 </TravelItem>
                 <TravelItem>
                     <TravelIconContainer>
                         <TravelIcon alt="Culture" src={cult}/>
                     </TravelIconContainer>
-                    <TravelItemTitle>культура<br />и история</TravelItemTitle>  
+                    <TravelItemTitle href="#">культура<br />и история</TravelItemTitle>  
                 </TravelItem>
                 <TravelItem>
                     <TravelIconContainer>
                         <TravelIcon alt="Night" src={night}/>
                     </TravelIconContainer>
-                    <TravelItemTitle>Ночная<br />жизнь</TravelItemTitle>  
+                    <TravelItemTitle href="#">Ночная<br />жизнь</TravelItemTitle>  
                 </TravelItem>
                 <TravelItem>
                     <TravelIconContainer>
                         <TravelIcon alt="Kids" src={kids}/>
                     </TravelIconContainer>
-                    <TravelItemTitle>Отдых<br />с детьми</TravelItemTitle>  
+                    <TravelItemTitle href="#">Отдых<br />с детьми</TravelItemTitle>  
                 </TravelItem>
-            </TravelList>       
+            </TravelList>
+            <TopDestinationsWrapper>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Краснодар" src={krasnodar} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Краснодар" src={russia} />
+                            <DestinationTitle>
+                                <DestinationCity>Краснодар</DestinationCity>
+                                <DestinationCountry>Россия</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices>Найти от 1 212 ₽</DestinationPrices>
+                                <DestinationDate>18 марта</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+            </TopDestinationsWrapper>
         </HomeWrapper>    
     )
 }
