@@ -1,17 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import barcelona from './barcelona.jpg';
 import compas from './compas.svg';
+import crimea from './crimea.jpg';
+import cult from './cult.svg';
 import edit from './edit.svg';
 import globe from './globe.svg';
-import palm from './palm.svg';
-import shop from './shop.svg';
-import cult from './cult.svg';
-import night from './night.svg';
 import kids from './kids.svg';
-
 import krasnodar from './krasnodar.jpg';
-import russia from './russia.svg'
+import mineralwaters from './mineralwaters.jpg';
+import night from './night.svg';
+import palm from './palm.svg';
+import russia from './russia.svg';
+import spain from './spain.svg';
+import saintp from './saintp.jpg';
+import shop from './shop.svg';
+import sochi from './sochi.jpg';
 
 const HomeWrapper = styled.div`
     display: flex;
@@ -152,7 +156,7 @@ const TopDestinationCaption = styled.div`
 const CaptionColumn = styled.div`
     display: flex;
     justify-content: space-evenly;
-    max-width: 15.9375rem;
+    max-width: 18.9375rem;
 `;
 
 const Flag = styled.img `
@@ -191,7 +195,7 @@ const DestinationTitleReversed = styled(DestinationTitle)`
     margin-right: 1.5rem;
 `;
 
-const DestinationPrices = styled.p`
+const DestinationPrices = styled.a`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -200,6 +204,7 @@ const DestinationPrices = styled.p`
     color: #00BAE8;
     margin-bottom: 0;
     margin-top: 2rem;
+    text-decoration: none;
 `;
 
 const DestinationDate = styled.p`
@@ -267,7 +272,7 @@ export default () => {
                     <TopDestinationImage alt="Краснодар" src={krasnodar} />
                     <TopDestinationCaption>
                         <CaptionColumn>
-                            <Flag alt="Краснодар" src={russia} />
+                            <Flag alt="Россия" src={russia} />
                             <DestinationTitle>
                                 <DestinationCity>Краснодар</DestinationCity>
                                 <DestinationCountry>Россия</DestinationCountry>
@@ -275,8 +280,134 @@ export default () => {
                         </CaptionColumn>
                         <CaptionColumn>
                             <DestinationTitleReversed>
-                                <DestinationPrices>Найти от 1 212 ₽</DestinationPrices>
+                                <DestinationPrices href="#">Найти от 1 212 ₽</DestinationPrices>
                                 <DestinationDate>18 марта</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Сочи (Адлер)" src={sochi} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Россия" src={russia} />
+                            <DestinationTitle>
+                                <DestinationCity>Сочи (Адлер)</DestinationCity>
+                                <DestinationCountry>Россия</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices href="#">Найти от 1 334 ₽</DestinationPrices>
+                                <DestinationDate>27 марта</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Санкт-Петербург" src={saintp} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Россия" src={russia} />
+                            <DestinationTitle>
+                                <DestinationCity>Санкт-Петербург</DestinationCity>
+                                <DestinationCountry>Россия</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices href="#">Найти от 1 508 ₽</DestinationPrices>
+                                <DestinationDate>19 февраля</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Сочи (Адлер)" src={sochi} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Россия" src={russia} />
+                            <DestinationTitle>
+                                <DestinationCity>Сочи (Адлер)</DestinationCity>
+                                <DestinationCountry>Россия</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices href="#">Найти от 1 334 ₽</DestinationPrices>
+                                <DestinationDate>27 марта</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Минеральные воды" src={mineralwaters} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Россия" src={russia} />
+                            <DestinationTitle>
+                                <DestinationCity>Минеральные Воды</DestinationCity>
+                                <DestinationCountry>Россия</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices href="#">Найти от 2 074 ₽</DestinationPrices>
+                                <DestinationDate>13 марта</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Сочи (Адлер)" src={sochi} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Россия" src={russia} />
+                            <DestinationTitle>
+                                <DestinationCity>Сочи (Адлер)</DestinationCity>
+                                <DestinationCountry>Россия</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices href="#">Найти от 1 334 ₽</DestinationPrices>
+                                <DestinationDate>27 марта</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Симферополь (Крым)" src={crimea} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Россия" src={russia} />
+                            <DestinationTitle>
+                                <DestinationCity>Симферополь (Крым)</DestinationCity>
+                                <DestinationCountry>Россия</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices href="#">Найти от 2 407 ₽</DestinationPrices>
+                                <DestinationDate>13 марта</DestinationDate>
+                            </DestinationTitleReversed>
+                        </CaptionColumn>
+                    </TopDestinationCaption>
+                </TopDestinationCard>
+                <TopDestinationCard>
+                    <TopDestinationImage alt="Барселона" src={barcelona} />
+                    <TopDestinationCaption>
+                        <CaptionColumn>
+                            <Flag alt="Испания" src={spain} />
+                            <DestinationTitle>
+                                <DestinationCity>Барселона</DestinationCity>
+                                <DestinationCountry>Испания</DestinationCountry>
+                            </DestinationTitle>
+                        </CaptionColumn>
+                        <CaptionColumn>
+                            <DestinationTitleReversed>
+                                <DestinationPrices href="#">Найти от 4 247 ₽</DestinationPrices>
+                                <DestinationDate>24 марта</DestinationDate>
                             </DestinationTitleReversed>
                         </CaptionColumn>
                     </TopDestinationCaption>
