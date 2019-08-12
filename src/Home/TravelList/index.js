@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import HomeWrapper from '../HomeWrapper';
 import barcelona from './barcelona.jpg';
 import compas from './compas.svg';
 import crimea from './crimea.jpg';
@@ -11,20 +12,12 @@ import krasnodar from './krasnodar.jpg';
 import mineralwaters from './mineralwaters.jpg';
 import night from './night.svg';
 import palm from './palm.svg';
-import russia from './russia.svg';
-import spain from './spain.svg';
+import russia from '../Flags/russia.svg';
+import spain from '../Flags/spain.svg';
 import saintp from './saintp.jpg';
 import shop from './shop.svg';
 import sochi from './sochi.jpg';
 
-const HomeWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #F8FCFF;
-`;
-    
 const SectionIcon = styled.img`
     margin-top: 3.5rem;
 `;
@@ -144,7 +137,6 @@ const TopDestinationImage = styled.img`
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 `;
-
 const TopDestinationCaption = styled.div`
     display: flex;
     flex-direction: row;
@@ -159,14 +151,14 @@ const CaptionColumn = styled.div`
     max-width: 18.9375rem;
 `;
 
-const Flag = styled.img `
-    margin-left: 0.75rem;
-`;
-
 const DestinationTitle = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
+`;
+
+const Flag = styled.img `
+    margin-left: 0.75rem;
 `;
 
 const DestinationCity = styled.p`
@@ -415,4 +407,4 @@ export default () => {
             </TopDestinationsWrapper>
         </HomeWrapper>    
     )
-}
+    }

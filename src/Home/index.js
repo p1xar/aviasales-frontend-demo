@@ -1,9 +1,13 @@
 import React from 'react';
 
 import TravelList from './TravelList';
+import BestPrices from './BestPrices';
 
 export default () => {
     return(
-        <TravelList />
+        <div>
+            <TravelList />
+            <BestPrices />
+        </div>
     );
 }
