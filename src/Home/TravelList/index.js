@@ -315,55 +315,19 @@ export default () => {
                     </TopDestinationCaption>
                 </TopDestinationCard>
                 <TopDestinationCard>
-                    <TopDestinationImage alt="Сочи (Адлер)" src={sochi} />
+                    <TopDestinationImage alt="Минеральные Воды" src={mineralwaters} />
                     <TopDestinationCaption>
                         <CaptionColumn>
                             <Flag alt="Россия" src={russia} />
                             <DestinationTitle>
-                                <DestinationCity>Сочи (Адлер)</DestinationCity>
-                                <DestinationCountry>Россия</DestinationCountry>
-                            </DestinationTitle>
-                        </CaptionColumn>
-                        <CaptionColumn>
-                            <DestinationTitleReversed>
-                                <DestinationPrices href="#">Найти от 1 334 ₽</DestinationPrices>
-                                <DestinationDate>27 марта</DestinationDate>
-                            </DestinationTitleReversed>
-                        </CaptionColumn>
-                    </TopDestinationCaption>
-                </TopDestinationCard>
-                <TopDestinationCard>
-                    <TopDestinationImage alt="Минеральные воды" src={mineralwaters} />
-                    <TopDestinationCaption>
-                        <CaptionColumn>
-                            <Flag alt="Россия" src={russia} />
-                            <DestinationTitle>
-                                <DestinationCity>Минеральные Воды</DestinationCity>
+                                <DestinationCity>Минеральные воды</DestinationCity>
                                 <DestinationCountry>Россия</DestinationCountry>
                             </DestinationTitle>
                         </CaptionColumn>
                         <CaptionColumn>
                             <DestinationTitleReversed>
                                 <DestinationPrices href="#">Найти от 2 074 ₽</DestinationPrices>
-                                <DestinationDate>13 марта</DestinationDate>
-                            </DestinationTitleReversed>
-                        </CaptionColumn>
-                    </TopDestinationCaption>
-                </TopDestinationCard>
-                <TopDestinationCard>
-                    <TopDestinationImage alt="Сочи (Адлер)" src={sochi} />
-                    <TopDestinationCaption>
-                        <CaptionColumn>
-                            <Flag alt="Россия" src={russia} />
-                            <DestinationTitle>
-                                <DestinationCity>Сочи (Адлер)</DestinationCity>
-                                <DestinationCountry>Россия</DestinationCountry>
-                            </DestinationTitle>
-                        </CaptionColumn>
-                        <CaptionColumn>
-                            <DestinationTitleReversed>
-                                <DestinationPrices href="#">Найти от 1 334 ₽</DestinationPrices>
-                                <DestinationDate>27 марта</DestinationDate>
+                                <DestinationDate>18 марта</DestinationDate>
                             </DestinationTitleReversed>
                         </CaptionColumn>
                     </TopDestinationCaption>
