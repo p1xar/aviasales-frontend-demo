@@ -54,8 +54,8 @@ const DestinationTitle = styled.div`
 const DestinationCity = styled.p`
     font-style: normal;
     font-weight: bold;
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 1.375rem;
+    line-height: 2rem;
     color: #5B5B5C;
     margin-top: 2rem;
     margin-bottom: 0rem;
@@ -64,8 +64,8 @@ const DestinationCity = styled.p`
 const DestinationCountry = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     color: #A0B0B9;
     text-transform: uppercase;
     margin-bottom: 2rem;
@@ -100,6 +100,49 @@ const DeparturePrice = styled.a`
     font-size: 1rem;
     line-height: 1.25rem;
     color: #00BAE8;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.125rem;
+        bottom: 0;
+        left: 0;
+        background: #00ACE2;
+        visibility: hidden;
+        border-radius: 0.3125rem;
+        transform: scaleX(0);
+        transition: .25s linear;
+    }
+    &:hover {
+        color: #5C5C5C;
+    }
+    &:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+    &:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+`;
+
+const BestPricesText = styled.p`
+    margin-top: 5rem;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: #4A4A4A;
+    max-width: 40.5rem;
+    text-align: center;
+`;
+
+const BestPricesDescription = styled(BestPricesText)`
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #A0B0B9;
+    margin-top: 0;
 `;
 export default () => {
     return (
@@ -201,6 +244,12 @@ export default () => {
                     </DepartureList>
                 </BestPricesColumn>
             </BestPricesWrapper>
+            <BestPricesText>
+                Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220 стран мира. Поиск и сравнение цен на авиабилеты среди 100 агентств и 728 авиакомпаний.
+            </BestPricesText>
+            <BestPricesDescription>
+                Цены, найденные пользователями за последние 48 часов, не являются офертой.
+            </BestPricesDescription>
         </HomeWrapper>
     );
 }

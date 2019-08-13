@@ -188,7 +188,6 @@ const DestinationTitleReversed = styled(DestinationTitle)`
 `;
 
 const DestinationPrices = styled.a`
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 22px;
@@ -197,6 +196,31 @@ const DestinationPrices = styled.a`
     margin-bottom: 0;
     margin-top: 2rem;
     text-decoration: none;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: #00ACE2;
+        visibility: hidden;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: .25s linear;
+    }
+    &:hover {
+        color: #5C5C5C;
+    }
+    &:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+    &:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
 `;
 
 const DestinationDate = styled.p`
