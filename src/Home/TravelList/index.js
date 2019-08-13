@@ -73,12 +73,12 @@ const TravelItemTitle = styled.a`
         content: "";
         position: absolute;
         width: 100%;
-        height: 2px;
+        height: 0.125rem;
         bottom: 0;
         left: 0;
         background: #00ACE2;
         visibility: hidden;
-        border-radius: 5px;
+        border-radius: 0.3125rem;
         transform: scaleX(0);
         transition: .25s linear;
     }
@@ -99,7 +99,7 @@ const TravelIconContainer = styled.div`
     width: 3rem;
     height: 3rem;
     position: absolute;
-    box-shadow: 0px 0.25rem 1rem rgba(74, 74, 74, 0.12);
+    box-shadow: 0 0.25rem 1rem rgba(74, 74, 74, 0.12);
     border-radius: 50%;
     background: #FFFFFF;
 `;
@@ -124,7 +124,7 @@ const TopDestinationCard = styled.div`
     flex-direction: column;
     border-radius: 0.5rem;
     background: #FFFFFF;
-    box-shadow: 0px 2px 12px rgba(0, 75, 93, 0.12);
+    box-shadow: 0 0.125rem 0.75rem rgba(0, 75, 93, 0.12);
     margin-bottom: 1.9375rem;
     &:nth-child(odd) {
         margin-right: 0.95875rem;
@@ -164,8 +164,8 @@ const Flag = styled.img `
 const DestinationCity = styled.p`
     font-style: normal;
     font-weight: bold;
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 1.375rem;
+    line-height: 2rem;
     color: #5B5B5C;
     margin-top: 2rem;
     margin-bottom: 0rem;
@@ -174,8 +174,8 @@ const DestinationCity = styled.p`
 const DestinationCountry = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     color: #A0B0B9;
     text-transform: uppercase;
     margin-bottom: 2rem;
@@ -190,8 +190,8 @@ const DestinationTitleReversed = styled(DestinationTitle)`
 const DestinationPrices = styled.a`
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 1.375rem;
+    line-height: 2rem;
     color: #00BAE8;
     margin-bottom: 0;
     margin-top: 2rem;
@@ -201,12 +201,12 @@ const DestinationPrices = styled.a`
         content: "";
         position: absolute;
         width: 100%;
-        height: 2px;
+        height: 0.125rem;
         bottom: 0;
         left: 0;
         background: #00ACE2;
         visibility: hidden;
-        border-radius: 5px;
+        border-radius: 0.3125rem;
         transform: scaleX(0);
         transition: .25s linear;
     }
@@ -227,8 +227,8 @@ const DestinationDate = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     color: #A0B0B9;
     margin-bottom: 2rem;
     margin-top: 0;
