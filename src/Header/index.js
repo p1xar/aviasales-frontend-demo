@@ -103,6 +103,12 @@ const FormWrapper = styled.div`
     flex-wrap: wrap;
     margin-top: 2.5rem;
     margin-bottom: 15.875rem;
+    @media screen and (max-width: 20rem) {
+        margin-top: 1rem;
+    }
+    @media screen and (min-width: 20.0625rem) and (max-width: 48rem) {
+
+    }
 `;
 
 const FormContainer = styled.div`
@@ -121,14 +127,20 @@ const StyledInput = styled.input`
         font-size: 16px;
         line-height: 20px;
     }
+    @media screen and (max-width: 20rem) {
+        margin-bottom: 0.125rem;
+        width: 17.25rem;
+    }
     
 `;
 const FromInput = styled(StyledInput)`
-    max-width: 14rem;
     height: 3rem;
     border-radius: .3rem 0 0 .3rem;
     color: #4A4A4A;
     position: relative;
+    @media screen and (max-width: 20rem) {
+        border-radius: .3rem .3rem 0 0;
+    }
 `;
 const Icon = styled.img`
     position: absolute;
@@ -141,22 +153,30 @@ const Icon = styled.img`
 const ArrowIcon = styled(Icon)``;
 
 const ToInput = styled(StyledInput)`
-    max-width: 14.125rem;
+
 `;
 
 const DatePickerTo = styled(StyledInput)`
-    max-width: 11.25rem;
+    @media screen and (max-width: 20rem) {
+        width: 8.02rem;
+        margin-right: 0.15rem;
+    }
 `;
 
 const DatePickerBack = styled(StyledInput)`
-    max-width: 11.25rem;
+    @media screen and (max-width: 20rem) {
+        width: 7.99rem;
+    }
 `;
 
 const Passangers = styled(StyledInput)`
-    max-width: 13.25rem;
     border-radius: 0 0.3rem 0.3rem 0;
     padding-right: 2rem;
     cursor: pointer;
+    @media screen and (max-width: 20rem) {
+        border-radius: 0 0 0.3rem 0.3rem;
+        padding-right: 0;
+    }
 `;
 
 const DateIcon = styled(Icon)``;
@@ -181,12 +201,19 @@ const SearchButton = styled.a`
     font-weight: 600;
     font-size: 1.75rem;
     line-height: 2.0625rem;
-    max-width: 19.25rem;
     padding-left: 2.8125rem;
     padding-top: 0.9375rem;
     padding-bottom: 1rem;
     padding-right: 4.625rem;
     text-decoration: none;
+    @media screen and (max-width: 20rem) {
+        padding-left: 3.25rem;
+        padding-right: 5.875rem;
+        padding-top: 0.875rem;
+        padding-bottom: 0.8125rem;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
 `;
 
 const PlaneIcon = styled(Icon)`
@@ -195,6 +222,9 @@ const PlaneIcon = styled(Icon)`
     top: 1.4rem;
     right: 2.5rem;
     position: relative;
+    @media screen and (max-width: 20rem) {
+        
+    }
 `;
 
 export default () => {
@@ -215,6 +245,7 @@ export default () => {
                     </FormContainer>
                     <FormContainer>
                         <DatePickerTo placeholder="Туда" />
+                        <DateIcon alt="Date" src={date} />
                     </FormContainer>
                     <FormContainer>
                         <DatePickerBack placeholder="Обратно" />
