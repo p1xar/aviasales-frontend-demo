@@ -34,6 +34,12 @@ const PopularTitle = styled.p`
     color: #4A4A4A;
     display: inline;
     margin-right: 0.4rem;
+    @media screen and (max-width: 20rem) {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+    }
 `;
 
 const PopularTitleChangeble = styled(PopularTitle)`
@@ -44,8 +50,11 @@ const PopularTitleChangeble = styled(PopularTitle)`
 const TravelList = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 `;
 
 const TravelItem = styled.div`
@@ -55,6 +64,13 @@ const TravelItem = styled.div`
     justify-content: center;
     &:not(:last-child) {
         margin-right: 3.5rem;
+    }
+    @media screen and (max-width: 20rem) {
+        &:not(:last-child) {
+            margin: 0;
+        }   
+        max-width: calc(33.333%);
+        flex: 1 0 calc(33.333%);
     }
 `;
 
