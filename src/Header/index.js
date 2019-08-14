@@ -105,6 +105,7 @@ const FormWrapper = styled.div`
     margin-bottom: 15.875rem;
     @media screen and (max-width: 20rem) {
         margin-top: 1rem;
+        margin-bottom: 5.5rem;
     }
     @media screen and (min-width: 20.0625rem) and (max-width: 48rem) {
 
@@ -187,9 +188,11 @@ const ShapeIcon = styled(Icon)`
 
 const CustomFormContainer = styled(FormContainer)`
     flex-basis: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
 `;
 
 const SearchButton = styled.a`
@@ -207,11 +210,11 @@ const SearchButton = styled.a`
     padding-right: 4.625rem;
     text-decoration: none;
     @media screen and (max-width: 20rem) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         padding-left: 3.25rem;
-        padding-right: 5.875rem;
-        padding-top: 0.875rem;
-        padding-bottom: 0.8125rem;
-        font-size: 1.1rem;
+        padding-right: 4.9rem; 
+        font-size: 1.5rem;
         line-height: 1.5rem;
     }
 `;
@@ -223,7 +226,9 @@ const PlaneIcon = styled(Icon)`
     right: 2.5rem;
     position: relative;
     @media screen and (max-width: 20rem) {
-        
+        top: -2.3rem;
+        right: initial;
+        left: 6.5rem;    
     }
 `;
 
