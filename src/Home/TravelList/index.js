@@ -30,7 +30,7 @@ const PopularTitle = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;
-    line-height: 0;
+    line-height: 2.25rem;
     color: #4A4A4A;
     display: inline;
     margin-right: 0.4rem;
@@ -256,7 +256,7 @@ export default () => {
             <SectionIcon alt="Compas" src={compas} />
             <HeaderPopular>
                 <PopularTitle>
-                    Популярные направления перелетов<p></p>из города  
+                    Популярные направления перелетов<br></br>из города  
                 </PopularTitle>
                 <PopularTitleChangeble>Москва</PopularTitleChangeble>
                 <img alt="Edit" src={edit} />

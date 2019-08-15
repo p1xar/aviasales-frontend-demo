@@ -190,9 +190,12 @@ const CustomFormContainer = styled(FormContainer)`
     flex-basis: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    
     margin-top: 1rem;
+    @media screen and (max-width: 20rem) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const SearchButton = styled.a`
