@@ -145,6 +145,11 @@ const TopDestinationCard = styled.div`
     &:nth-child(odd) {
         margin-right: 0.95875rem;
     }
+    @media screen and (max-width: 20rem) {
+        &:nth-child(odd) {
+            margin-right: 0rem;
+        } 
+    }
 `;
 
 const TopDestinationImage = styled.img`
@@ -152,6 +157,9 @@ const TopDestinationImage = styled.img`
     max-height: 13.25rem;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
+    @media screen and (max-width: 20rem) {
+        max-width: 19.25rem;
+    }
 `;
 const TopDestinationCaption = styled.div`
     display: flex;
@@ -165,6 +173,9 @@ const CaptionColumn = styled.div`
     display: flex;
     justify-content: space-evenly;
     max-width: 18.9375rem;
+    @media screen and (max-width: 20rem) {
+        max-width: 9.625rem;
+    }
 `;
 
 const DestinationTitle = styled.div`
@@ -175,6 +186,9 @@ const DestinationTitle = styled.div`
 
 const Flag = styled.img `
     margin-left: 0.75rem;
+    @media screen and (max-width: 20rem) {
+        display: none;
+    }
 `;
 
 const DestinationCity = styled.p`
@@ -185,6 +199,10 @@ const DestinationCity = styled.p`
     color: #5B5B5C;
     margin-top: 2rem;
     margin-bottom: 0rem;
+    @media screen and (max-width: 20rem) {
+        font-size: 0.9rem;
+        line-height: 1.25rem;
+    }
 `;
 
 const DestinationCountry = styled.p`
@@ -236,6 +254,10 @@ const DestinationPrices = styled.a`
     &:focus:before {
         visibility: visible;
         transform: scaleX(1);
+    }
+    @media screen and (max-width: 20rem) {
+        font-size: 0.875rem;
+        line-height: 1rem;
     }
 `;
 
