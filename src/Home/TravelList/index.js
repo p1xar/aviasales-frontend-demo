@@ -129,10 +129,9 @@ const TravelIcon = styled.img`
 const TopDestinationsWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 3.4375rem;
-    max-width: 65rem;
 `;
 
 const TopDestinationCard = styled.div`
@@ -153,7 +152,7 @@ const TopDestinationCard = styled.div`
 `;
 
 const TopDestinationImage = styled.img`
-    max-width: 31.875rem;
+    max-width: 100%;
     max-height: 13.25rem;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
