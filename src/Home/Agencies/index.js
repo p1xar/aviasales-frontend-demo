@@ -41,8 +41,9 @@ const Agency = styled.img`
     &:not(:last-child) {
         margin-right: 1.25rem;
     }
+    
     @media screen and (max-width: 51.4375rem) {
-    &:not(:last-child), :last-child {
+        &:not(:last-child), :last-child {
         margin-right: 2rem;
         margin-left: 2rem;
         margin-top: 2.375rem;
@@ -69,6 +70,11 @@ const SubscriptionWrapper = styled.div`
     @media screen and (max-width: 20rem) {
         display: none;
     }
+    @media screen and (min-width: 20rem) and (max-width: 48rem) {
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
 `;
 
 const Column = styled.div`
@@ -76,6 +82,16 @@ const Column = styled.div`
     flex-direction: column;
     &:not(:last-child) {
         margin-right: 10.3125rem;
+    }
+    @media screen and (max-width: 48rem) {
+        &:not(:last-child) {
+            margin-right: 0rem;
+        }    
+    }
+    @media screen and (min-width: 48.00625rem) and (max-width: 67.75rem) {
+        &:not(:last-child) {
+            margin-right: 2rem;
+        } 
     }
 `;
 
@@ -85,6 +101,9 @@ const SubscriptionTitle = styled.p`
     font-size: 1rem;
     line-height: 1.25rem;
     color: #5C5C5C;
+    @media screen and (max-width: 48rem) {
+        text-align: center;
+    }
 `;
 
 const SubscriptionDesc = styled.p`
@@ -92,12 +111,19 @@ const SubscriptionDesc = styled.p`
     font-weight: normal;
     font-size: 1rem;
     line-height: 1.375rem;
+    @media screen and (max-width: 48rem) {
+        text-align: center;
+    }
 `;
 
 const CustomColumn = styled(Column)`
     flex-direction: row;
     align-self: flex-start;
     margin-top: 0.96rem;
+    @media screen and (max-width: 48rem) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const SocialWrapper = styled.div`
@@ -114,6 +140,9 @@ const SubscriptionForm = styled.div`
     margin-left: 1rem;
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 48rem) {
+        margin-top: 1.5rem;
+    }
 `;
 
 const EmailInput = styled.input`
@@ -127,6 +156,9 @@ const EmailInput = styled.input`
     font-size: 1rem;
     line-height: 1.25rem;
     padding-left: 0.8125rem;  
+    @media screen and (max-width: 48rem) {
+        width: 9.938rem;
+    }
 `;
 
 const Button = styled.a`
@@ -143,6 +175,10 @@ const Button = styled.a`
     border-radius: 0.125rem;
     color: #fff;
     text-decoration: none;
+    @media screen and (max-width: 48rem) {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;    
+    }
 `;
 export default () => {
     return(

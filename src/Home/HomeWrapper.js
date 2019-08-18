@@ -6,7 +6,8 @@ const HomeWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #F8FCFF;
+    max-width: 95%;
+    margin: 0 auto
 `;
 
 export default HomeWrapper;
