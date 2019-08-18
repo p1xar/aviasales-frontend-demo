@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const HomeWrapper = styled.div`
@@ -7,7 +6,7 @@ const HomeWrapper = styled.div`
     justify-content: center;
     align-items: center;
     max-width: 95%;
-    margin: 0 auto
+    margin: 0 auto;
 `;
 
 export default HomeWrapper;

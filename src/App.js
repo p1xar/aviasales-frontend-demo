@@ -8,7 +8,7 @@ import Home from './Home';
 function App() {
   return (
       <BrowserRouter>
-        <div classname="App">
+        <div className="App">
         <Header />
         <Route path='/' exact component={Home} />
       </div>
