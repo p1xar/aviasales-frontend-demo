@@ -19,24 +19,43 @@ const Title = styled.p`
     font-size: 2rem;
     line-height: 2.5rem;
     margin-top: 6.0625rem;
+    text-align: center;
+    @media screen and (max-width: 20rem) {
+        display: none;
+    }
 `;
 
 const AgenciesWrapper = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 20rem) {
+        display: none;
+    }
+
 `;
 
 const Agency = styled.img`
     &:not(:last-child) {
         margin-right: 1.25rem;
     }
+    @media screen and (max-width: 51.4375rem) {
+    &:not(:last-child), :last-child {
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-top: 2.375rem;
+    } 
 `;
 
 const Hr = styled.img`
     width: 100%;
     height: 0.4375rem;
     margin-top: 4.25rem;
+    @media screen and (max-width: 20rem) {
+        display: none;
+    }
 `;
 
 const SubscriptionWrapper = styled.div`
@@ -47,6 +66,9 @@ const SubscriptionWrapper = styled.div`
     margin-top: 2.1875rem;
     margin-bottom: 1.5rem;
     max-width: 65rem;
+    @media screen and (max-width: 20rem) {
+        display: none;
+    }
 `;
 
 const Column = styled.div`
