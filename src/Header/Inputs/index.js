@@ -13,12 +13,9 @@ const FormWrapper = styled.div`
     flex-wrap: wrap;
     margin-top: 2.5rem;
     margin-bottom: 15.875rem;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 40rem) {
         margin-top: 1rem;
         margin-bottom: 5.5rem;
-    }
-    @media screen and (min-width: 20.0625rem) and (max-width: 48rem) {
-
     }
 `;
 
@@ -38,7 +35,7 @@ const StyledInput = styled.input`
         font-size: 16px;
         line-height: 20px;
     }
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 70rem) {
         margin-bottom: 0.125rem;
         width: 17.25rem;
     }
@@ -49,9 +46,13 @@ const FromInput = styled(StyledInput)`
     border-radius: .3rem 0 0 .3rem;
     color: #4A4A4A;
     position: relative;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 37.5rem) {
         border-radius: .3rem .3rem 0 0;
     }
+    @media screen and (min-width: 37.6rem) and (max-width: 70rem) {
+        border-radius: .3rem 0 0 0;
+    }
+    
 `;
 const Icon = styled.img`
     position: absolute;
@@ -64,18 +65,23 @@ const Icon = styled.img`
 const ArrowIcon = styled(Icon)``;
 
 const ToInput = styled(StyledInput)`
-
+    @media screen and (min-width: 37.6rem) and (max-width: 70rem) {
+        border-radius: 0 0.3rem 0 0;
+    }
 `;
 
 const DatePickerTo = styled(StyledInput)`
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 70rem) {
         width: 8.02rem;
         margin-right: 0.15rem;
+    }
+    @media screen and (min-width: 37.6rem) and (max-width: 70rem) {
+        border-radius: 0 0 0 0.3rem;
     }
 `;
 
 const DatePickerBack = styled(StyledInput)`
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 70rem) {
         width: 7.99rem;
     }
 `;
@@ -84,7 +90,7 @@ const Passangers = styled(StyledInput)`
     border-radius: 0 0.3rem 0.3rem 0;
     padding-right: 2rem;
     cursor: pointer;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 70rem) {
         border-radius: 0 0 0.3rem 0.3rem;
         padding-right: 0;
     }
@@ -100,7 +106,6 @@ const CustomFormContainer = styled(FormContainer)`
     flex-basis: 100%;
     display: flex;
     justify-content: center;
-    
     margin-top: 1rem;
     @media screen and (max-width: 20rem) {
         flex-direction: column;
@@ -145,6 +150,20 @@ const PlaneIcon = styled(Icon)`
     }
 `;
 
+const BreakColumn = styled.div`
+    display: none;
+    @media screen and (max-width: 37.5rem) {
+        display: block;
+        flex-basis: 100%;
+    }
+    @media screen and (min-width: 37.6rem) and (max-width: 70rem) {
+        &:nth-child(4) {
+            display: block;
+            flex-basis: 100%;
+        }
+        
+    }
+`;
 export default() => {
     return (
         <FormWrapper>
@@ -152,9 +171,11 @@ export default() => {
                         <FromInput placeholder="Отправление"/>
                         <ArrowIcon alt='Arrow' src={arrow} />
                     </FormContainer>
+                    <BreakColumn />
                    <FormContainer>
                         <ToInput placeholder="Прибытие"/>
                     </FormContainer>
+                    <BreakColumn />
                     <FormContainer>
                         <DatePickerTo placeholder="Туда" />
                         <DateIcon alt="Date" src={date} />
@@ -163,6 +184,7 @@ export default() => {
                         <DatePickerBack placeholder="Обратно" />
                         <DateIcon alt="Date" src={date} />
                     </FormContainer>
+                    <BreakColumn />
                     <FormContainer>
                         <Passangers placeholder="1 пассажир, эконом"readOnly/>
                         <ShapeIcon alt="Triangle" src={shape} />
