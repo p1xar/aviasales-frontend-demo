@@ -145,7 +145,7 @@ const TopDestinationCard = styled.div`
     &:nth-child(odd) {
         margin-right: 0.95875rem;
     }
-    @media screen and (max-width: 68.25rem) {
+    @media screen and (max-width: 68.1874rem) {
         &:nth-child(odd) {
             margin-right: 0rem;
         } 
