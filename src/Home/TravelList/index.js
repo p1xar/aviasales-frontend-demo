@@ -189,6 +189,9 @@ const Flag = styled.img `
     @media screen and (max-width: 20rem) {
         display: none;
     }
+    @media screen and (min-width: 21rem) {
+        display: block;
+    }
 `;
 
 const DestinationCity = styled.p`
@@ -199,7 +202,7 @@ const DestinationCity = styled.p`
     color: #5B5B5C;
     margin-top: 2rem;
     margin-bottom: 0rem;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 34.0625rem) {
         font-size: 0.9rem;
         line-height: 1.25rem;
     }
@@ -219,6 +222,9 @@ const DestinationCountry = styled.p`
 const DestinationTitleReversed = styled(DestinationTitle)`
     align-items: flex-end;
     margin-right: 1.5rem;
+    @media screen and (max-width: 48rem) {
+        margin-right: 0.9375rem;
+    }
 `;
 
 const DestinationPrices = styled.a`
@@ -255,7 +261,7 @@ const DestinationPrices = styled.a`
         visibility: visible;
         transform: scaleX(1);
     }
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 34.0625rem) {
         font-size: 0.875rem;
         line-height: 1rem;
     }
