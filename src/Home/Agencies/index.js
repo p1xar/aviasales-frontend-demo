@@ -47,6 +47,7 @@ const Agency = styled.img`
         margin-right: 2rem;
         margin-left: 2rem;
         margin-top: 2.375rem;
+        }
     } 
 `;
 
@@ -180,6 +181,7 @@ const Button = styled.a`
         padding-right: 0.25rem;    
     }
 `;
+
 export default () => {
     return(
         <HomeWrapper>

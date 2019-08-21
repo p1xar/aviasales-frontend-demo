@@ -53,8 +53,9 @@ const TravelList = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    @media screen and (min-width: 20rem) and (max-width: 48rem) {
+        justify-content: center;
+    }
 `;
 
 const TravelItem = styled.div`
@@ -65,7 +66,7 @@ const TravelItem = styled.div`
     &:not(:last-child) {
         margin-right: 3.5rem;
     }
-    @media screen and (max-width: 20rem) {
+    @media screen and (min-width: 20rem) and (max-width: 49.8125rem) {
         &:not(:last-child) {
             margin: 0;
         }   
