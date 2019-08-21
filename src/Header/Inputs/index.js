@@ -103,18 +103,17 @@ const ShapeIcon = styled(Icon)`
 `;
 
 const CustomFormContainer = styled(FormContainer)`
-    flex-basis: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 1rem;
-    @media screen and (max-width: 20rem) {
-        flex-direction: column;
-        align-items: center;
-    }
+    width: 18.3125rem;
+    height: 4rem;
+    background: #FF9241;
+    border-radius: 0.3rem;
 `;
 
 const SearchButton = styled.a`
-    background: #FF9241;
     color: white;
     border: 0;
     border-radius: 0.25rem;
@@ -122,16 +121,8 @@ const SearchButton = styled.a`
     font-weight: 600;
     font-size: 1.75rem;
     line-height: 2.0625rem;
-    padding-left: 2.8125rem;
-    padding-top: 0.9375rem;
-    padding-bottom: 1rem;
-    padding-right: 4.625rem;
     text-decoration: none;
-    @media screen and (max-width: 20rem) {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 3.25rem;
-        padding-right: 4.9rem; 
+    @media screen and (max-width: 70.999rem) {
         font-size: 1.5rem;
         line-height: 1.5rem;
     }
@@ -140,28 +131,27 @@ const SearchButton = styled.a`
 const PlaneIcon = styled(Icon)`
     width: 1.585rem;
     height: 1.305rem;
-    top: 1.4rem;
-    right: 2.5rem;
+    top: 0rem;
+    right: -1.5rem;
     position: relative;
-    @media screen and (max-width: 20rem) {
-        top: -2.3rem;
-        right: initial;
-        left: 6.5rem;    
-    }
 `;
 
 const BreakColumn = styled.div`
     display: none;
+    flex-basis: 100%;
     @media screen and (max-width: 37.599rem) {
         display: block;
-        flex-basis: 100%;
     }
     @media screen and (min-width: 37.699rem) and (max-width: 70.999rem) {
-        &:nth-child(4) {
+        display: none;
+        &:nth-child(4), &:nth-child(9) {
             display: block;
-            flex-basis: 100%;
         }
-        
+    }
+    @media screen and (min-width: 71rem) {
+        &:nth-child(9) {
+            display: block;
+        }
     }
 `;
 export default() => {
@@ -189,6 +179,7 @@ export default() => {
                         <Passangers placeholder="1 пассажир, эконом"readOnly/>
                         <ShapeIcon alt="Triangle" src={shape} />
                     </FormContainer>
+                    <BreakColumn />
                     <CustomFormContainer>
                         <SearchButton href="/">
                             Найти билеты
