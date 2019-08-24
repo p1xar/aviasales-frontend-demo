@@ -25,6 +25,13 @@ const BestPricesWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media screen and (min-width: 20.01rem) and (max-width: 48rem) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    @media screen and (min-width: 48.01rem) and (max-width: 71rem) {
+        justify-content: center;
+    }
 `;
 
 const BestPricesColumn = styled.div`
@@ -50,6 +57,23 @@ const BestPricesColumn = styled.div`
             padding-right: 0rem;
             padding-bottom: 1.5rem;
             border-bottom: 0.1rem dashed #E8EDF1;    
+        }
+    }
+    @media screen and (min-width: 20.01rem) and (max-width: 48rem) {
+        &:not(:last-child) {
+            border-right: none;
+            margin-right: 0rem;
+            margin-left: 0rem;
+            padding-right: 0rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 0.1rem dashed #E8EDF1;    
+        }
+        max-width: 100%;
+    }
+    @media screen and (min-width: 48.01rem) and (max-width: 71rem) {
+        &:not(:last-child) {
+            padding-right: 1rem;
+            margin-right: 1rem;
         }
     }
 `;
@@ -153,9 +177,6 @@ const BestPricesText = styled.p`
     color: #4A4A4A;
     max-width: 40.5rem;
     text-align: center;
-    @media screen and (max-width: 20rem) {
-        
-    }
 `;
 
 const BestPricesDescription = styled(BestPricesText)`
