@@ -4,6 +4,7 @@ import TravelList from './TravelList';
 import BestPrices from './BestPrices';
 import Agencies from './Agencies';
 import MainOffers from './MainOffers';
+import MainArticles from './MainArticles';
 
 export default () => {
     return(
@@ -12,6 +13,7 @@ export default () => {
             <BestPrices />
             <Agencies />
             <MainOffers />
+            <MainArticles />
         </div>
     );
 }
