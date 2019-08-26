@@ -12,6 +12,9 @@ const CustomHomeWrapper = styled(HomeWrapper)`
 
 const MainWrapper = styled.div`
     width: 65rem;
+    @media screen and (max-width: 65.625rem) {
+        width: 100%;
+    }
 `;
 
 const MainOfferTitle = styled.p`
@@ -22,6 +25,9 @@ const MainOfferTitle = styled.p`
     text-align: left;
     color: #FFFFFF;
     align-self: flex-start;
+    @media screen and (max-width: 65.625rem) {
+        margin-left: 1rem;
+    }
 `;
 
 const MainOfferColumns = styled.div`
@@ -29,12 +35,28 @@ const MainOfferColumns = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    @media screen and (min-width: 20rem) and (max-width: 48rem) {
+        flex-direction: column;
+    }
+    @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+        justify-content: center;
+    }
 `;
 
 const Column = styled.div`
     width: 18.625rem;
     height: 16.875rem;
     background: #fff;
+    @media screen and (max-width: 48rem) {
+        margin-top: 1rem;
+    }
+    @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+        width: 15rem;
+        height: 18rem;
+    }
 `;
 
 const ColumnHeader = styled.div`
@@ -71,6 +93,10 @@ const ColumnItems = styled.div`
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
+    @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
 `;
 
 const PartnerIcon = styled.img`
@@ -106,6 +132,9 @@ const MainOfferDescription = styled.p`
     color: #242424;
     margin-left: 0.5rem;
     margin-right: 0.5rem;  
+    @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+        font-size: 0.8rem;
+    }
 `;
 
 const MainOfferReadMore = styled.a`
@@ -117,6 +146,9 @@ const MainOfferReadMore = styled.a`
     margin-top: 1.5rem;
     text-decoration: none;
     color: #D93533;
+    @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+        padding: 0.625rem 2rem;
+    }
 `;
 export default () => {
     return (
