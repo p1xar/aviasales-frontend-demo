@@ -8,6 +8,9 @@ import list from './list.svg';
 const HomeWrapperCustom = styled(HomeWrapper)`
     max-width: 65rem;
     margin-top: 1rem;
+    @media screen and (max-width: 65.625rem) {
+        max-width: 95%;
+    }
 `;
 const MainArticlesTitleWrapper = styled.div`
     display: flex;
