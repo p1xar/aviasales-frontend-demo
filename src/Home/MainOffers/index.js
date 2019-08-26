@@ -150,6 +150,36 @@ const MainOfferReadMore = styled.a`
         padding: 0.625rem 2rem;
     }
 `;
+
+const MainOfferFooter = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+        justify-content: space-evenly;
+    }
+    @media screen and (min-width: 20rem) and (max-width: 48rem) {
+        flex-direction: column;    
+    }
+`;
+
+const MainOfferAllOffers = styled.a`
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #fff;
+`;
+
+const MainOfferAvgInfo = styled.p`
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #fff;
+`;
 export default () => {
     return (
         <CustomHomeWrapper>
@@ -213,6 +243,10 @@ export default () => {
                         </ColumnDescription>
                     </Column>
                 </MainOfferColumns>
+                <MainOfferFooter>
+                    <MainOfferAllOffers href="#">Смотреть все спецпредложения</MainOfferAllOffers>
+                    <MainOfferAvgInfo>* средняя цена по направлению</MainOfferAvgInfo>
+                </MainOfferFooter>
             </MainWrapper> 
         </CustomHomeWrapper>
           
