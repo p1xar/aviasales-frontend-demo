@@ -5,6 +5,7 @@ import BestPrices from './BestPrices';
 import Agencies from './Agencies';
 import MainOffers from './MainOffers';
 import MainArticles from './MainArticles';
+import MobileApplication from './MobileApplication';
 
 export default () => {
     return(
@@ -14,6 +15,7 @@ export default () => {
             <Agencies />
             <MainOffers />
             <MainArticles />
+            <MobileApplication />
         </div>
     );
 }
