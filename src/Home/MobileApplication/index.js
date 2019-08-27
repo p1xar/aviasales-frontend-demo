@@ -14,6 +14,10 @@ const HomeWrapperCustom = styled(HomeWrapper)`
     max-width: 100%;
     margin-top: 2.5rem;
     height: 17.5625rem;
+    margin-bottom: 3rem;
+    @media screen and (max-width: 20rem) {
+        height: 23.1rem;
+    }
 `;
 
 const MainWrapper = styled.div`
@@ -24,15 +28,31 @@ const MainWrapper = styled.div`
     width: 65rem;
     @media screen and (max-width: 65.625rem) {
         width: 100%;
+        flex-direction: column;
     }
 `;
 
+const AppScreenshotContainer= styled.div`
+    position: relative;
+    @media screen and (max-width: 20rem) {
+        order: 2;
+    }
+`;
 const AppScreenshot = styled.img`
     width: 14.625rem;
     height: 19.25rem;
     position: relative;
     bottom: 0.85rem;
     margin-right: 5rem;
+    @media screen and (max-width: 20rem) {
+        margin-right: 0rem;
+        width: 10.125rem;
+        height: 13.3125rem;
+        position: absolute;
+        order: 2;
+        right: 0rem;
+        bottom: 0.75rem;
+    }
 `;
 
 const AppDescriptionWrapper = styled.div`
@@ -47,16 +67,29 @@ const AppDescriptionTitle = styled.p`
     line-height: 2.5rem;
     color: #fff;
     margin-bottom: 0.5rem;
+    @media screen and (max-width: 20rem) {
+        order: 0;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
 `;
 
 const AppRatingWrapper = styled.div`
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 20rem) {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
 `;
 
 const AppRating = styled.div`
     display: flex;
     align-items: center;
+    @media screen and (max-width: 20rem) {
+        order: 1;
+    }
 `;
 
 const Star = styled.img`
@@ -78,6 +111,13 @@ const AppRatingTitle = styled.p`
 const AppPlatformsWrapper = styled.div`
     display: flex;
     margin-top: 2.6875rem;
+    @media screen and (max-width: 20rem) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: auto;
+        margin-right: 1rem;
+        margin-bottom: 3.5rem;
+    }
 `;
 
 const AppPlatfromColumn = styled.div`
@@ -88,6 +128,16 @@ const AppPlatfromColumn = styled.div`
     }
     &:not(:first-child) {
         margin-left: 1.25rem;
+    }
+    @media screen and (max-width: 20rem) {
+        &:not(:last-child) {
+            border-right: none;
+            padding-right: 0rem;
+        }
+        &:not(:first-child) {
+            margin-left: 0rem;
+        }
+        margin-top: 1.8rem;    
     } 
 `;
 
@@ -105,11 +155,15 @@ const AppLink = styled.a`
     text-decoration: none;
     color: #fff;
 `;
+
+
 export default () => {
     return (
         <HomeWrapperCustom>
             <MainWrapper>
-                <AppScreenshot alt = "AppScreenshot" src={phone} />
+                <AppScreenshotContainer>
+                    <AppScreenshot alt = "AppScreenshot" src={phone} />
+                </AppScreenshotContainer>
                 <AppDescriptionWrapper>
                     <AppDescriptionTitle>Скачай мобильное приложение Aviasales.ru</AppDescriptionTitle>
                     <AppRatingWrapper>
@@ -137,7 +191,7 @@ export default () => {
                         </AppPlatfromColumn>
                     </AppPlatformsWrapper>
                 </AppDescriptionWrapper>
-            </MainWrapper>    
+            </MainWrapper>  
         </HomeWrapperCustom>
     )
 }
