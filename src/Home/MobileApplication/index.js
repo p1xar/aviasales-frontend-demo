@@ -15,7 +15,7 @@ const HomeWrapperCustom = styled(HomeWrapper)`
     margin-top: 2.5rem;
     height: 17.5625rem;
     margin-bottom: 3rem;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         height: 23.1rem;
     }
 `;
@@ -28,13 +28,13 @@ const MainWrapper = styled.div`
     width: 65rem;
     @media screen and (max-width: 65.625rem) {
         width: 100%;
-        flex-direction: column;
+        justify-content: center;
     }
 `;
 
 const AppScreenshotContainer= styled.div`
     position: relative;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         order: 2;
     }
 `;
@@ -42,17 +42,28 @@ const AppScreenshot = styled.img`
     width: 14.625rem;
     height: 19.25rem;
     position: relative;
-    bottom: 0.85rem;
+    bottom: 0.7rem;
     margin-right: 5rem;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         margin-right: 0rem;
         width: 10.125rem;
         height: 13.3125rem;
         position: absolute;
         order: 2;
-        right: 0rem;
-        bottom: 0.75rem;
     }
+    @media screen and (min-width: 20rem) and (max-width: 31.125rem) {
+        bottom: 0.75rem;
+        right: 0.5rem;
+    }
+    @media screen and (min-width: 31.1875rem) and (max-width: 48rem) {
+        bottom: -11.55rem;
+        right: 15rem;
+    }
+    @media screen and (min-width: 48rem) and (max-width: 62.5rem) {
+        margin-right: 1rem;
+    }
+     
+
 `;
 
 const AppDescriptionWrapper = styled.div`
@@ -67,18 +78,21 @@ const AppDescriptionTitle = styled.p`
     line-height: 2.5rem;
     color: #fff;
     margin-bottom: 0.5rem;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         order: 0;
         text-align: center;
         font-size: 1.5rem;
         line-height: 1.75rem;
     }
+    @media screen and (min-width: 48.01rem) and (max-width: 62.5rem) {
+        font-size: 1.5rem;
+    } 
 `;
 
 const AppRatingWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         flex-direction: row-reverse;
         justify-content: center;
     }
@@ -87,7 +101,7 @@ const AppRatingWrapper = styled.div`
 const AppRating = styled.div`
     display: flex;
     align-items: center;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         order: 1;
     }
 `;
@@ -111,12 +125,15 @@ const AppRatingTitle = styled.p`
 const AppPlatformsWrapper = styled.div`
     display: flex;
     margin-top: 2.6875rem;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         flex-direction: column;
         align-items: flex-start;
         margin-left: auto;
         margin-right: 1rem;
         margin-bottom: 3.5rem;
+    }
+    @media screen and (min-width: 25rem) and (max-width: 48rem) {
+        margin-right: 3rem;
     }
 `;
 
@@ -129,7 +146,7 @@ const AppPlatfromColumn = styled.div`
     &:not(:first-child) {
         margin-left: 1.25rem;
     }
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 48rem) {
         &:not(:last-child) {
             border-right: none;
             padding-right: 0rem;
