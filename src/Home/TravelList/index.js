@@ -133,6 +133,9 @@ const TopDestinationsWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 3.4375rem;
+    @media screen and (min-width: 80rem) {
+        max-width: 65.625rem;
+    }
 `;
 
 const TopDestinationCard = styled.div`
@@ -142,6 +145,10 @@ const TopDestinationCard = styled.div`
     background: #FFFFFF;
     box-shadow: 0 0.125rem 0.75rem rgba(0, 75, 93, 0.12);
     margin-bottom: 1.9375rem;
+    @media screen and (min-width: 80rem) {
+        width: 31.9375rem;
+    }
+    
     &:nth-child(odd) {
         margin-right: 0.95875rem;
     }
@@ -222,6 +229,7 @@ const DestinationCountry = styled.p`
 const DestinationTitleReversed = styled(DestinationTitle)`
     align-items: flex-end;
     margin-right: 1.5rem;
+    margin-left: 0rem;
     @media screen and (max-width: 48rem) {
         margin-right: 0.9375rem;
     }
