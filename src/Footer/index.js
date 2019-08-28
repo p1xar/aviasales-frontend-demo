@@ -14,6 +14,17 @@ const FooterLinks = styled.div`
 const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 20rem) {
+        &:nth-child(even) {
+            margin-left: 2rem;
+        }
+        &:nth-child(odd) {
+            margin-right: 2rem;
+        }
+        &:nth-child(n+3) {
+            margin-top: 2rem;
+        }
+    }
 `;
 
 const FooterTitle = styled.p`
