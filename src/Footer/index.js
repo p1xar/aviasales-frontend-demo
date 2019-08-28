@@ -15,18 +15,17 @@ const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
     @media screen and (max-width: 20rem) {
-        &:nth-child(even) {
-            margin-left: 2rem;
-        }
-        &:nth-child(odd) {
-            margin-right: 2rem;
-        }
-        &:nth-child(n+3) {
-            margin-top: 2rem;
-        }
+        
     }
 `;
 
+const FooterColumnBreak = styled.div`
+    display: none;
+    @media screen and (max-width: 20rem) {
+        display: flex;
+        flex-basis: 100%;
+    }
+`;
 const FooterTitle = styled.p`
     font-style: normal;
     font-weight: 500;
@@ -78,6 +77,7 @@ export default () => {
                     <FooterLink href="#">Лондон</FooterLink>
                     <FooterLinkMore href="#">Все города →</FooterLinkMore>
                 </FooterColumn>
+                <FooterColumnBreak />
                 <FooterColumn>
                     <FooterTitle>
                         Авиакомпании
@@ -102,6 +102,7 @@ export default () => {
                     <FooterLink href="#">Гамбург</FooterLink>
                     <FooterLinkMore href="#">Все аэропорты →</FooterLinkMore>
                 </FooterColumn>
+                <FooterColumnBreak />
                 <FooterColumn>
                     <FooterTitle>
                         НАПРАВЛЕНИЯ
