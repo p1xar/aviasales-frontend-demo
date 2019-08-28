@@ -9,19 +9,24 @@ const FooterLinks = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media screen and (min-width: 20rem) and (max-width: 40rem) {
+        justify-content: space-evenly;
+    }
 `;
 
 const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
-    @media screen and (max-width: 20rem) {
-        
+    @media screen and (max-width: 40rem) {
+        &:nth-child(n+3) {
+            margin-top: 2rem;
+        }        
     }
 `;
 
 const FooterColumnBreak = styled.div`
     display: none;
-    @media screen and (max-width: 20rem) {
+    @media screen and (max-width: 40rem) {
         display: flex;
         flex-basis: 100%;
     }
