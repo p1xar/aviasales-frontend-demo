@@ -73,6 +73,23 @@ const FooterLinkMore = styled(FooterLink)`
   margin-top: 1rem;
   color: ##4a4a4a;
 `;
+
+const Divider = styled.hr`
+  border: 1px solid #e0e6e8;
+  width: 100%;
+  margin-top: 1.8125rem;
+  margin-bottom: 2.5rem;
+`;
+
+const SecondFooterWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const SecondFooterColumn = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 export default () => {
   return (
     <CustomHomeWrapper>
@@ -139,6 +156,10 @@ export default () => {
           <FooterLink href="#">Помощь</FooterLink>
         </FooterColumn>
       </FooterLinks>
+      <Divider />
+      <SecondFooterWrapper>
+        <SecondFooterColumn></SecondFooterColumn>
+      </SecondFooterWrapper>
     </CustomHomeWrapper>
   );
 };
