@@ -1,21 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import TravelList from './TravelList';
-import BestPrices from './BestPrices';
-import Agencies from './Agencies';
-import MainOffers from './MainOffers';
-import MainArticles from './MainArticles';
-import MobileApplication from './MobileApplication';
+import TravelList from "./TravelList";
+import BestPrices from "./BestPrices";
+import Agencies from "./Agencies";
+import MainOffers from "./MainOffers";
+import MainArticles from "./MainArticles";
+import MobileApplication from "./MobileApplication";
 
 export default () => {
-    return(
-        <div>
-            <TravelList />
-            <BestPrices />
-            <Agencies />
-            <MainOffers />
-            <MainArticles />
-            <MobileApplication />
-        </div>
-    );
-}
+  return (
+    <div>
+      <TravelList />
+      <BestPrices />
+      <Agencies />
+      <MainOffers />
+      <MainArticles />
+      <MobileApplication />
+    </div>
+  );
+};
