@@ -123,6 +123,7 @@ const AppRatingTitle = styled.p`
 const AppPlatformsWrapper = styled.div`
   display: flex;
   margin-top: 2.6875rem;
+  min-width: 9rem;
   @media screen and (max-width: 48rem) {
     flex-direction: column;
     align-items: flex-start;

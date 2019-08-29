@@ -4,12 +4,15 @@ import HomeWrapper from "../Home/HomeWrapper";
 
 const CustomHomeWrapper = styled(HomeWrapper)`
   align-items: initial;
+  @media screen and (min-width: 1024px) {
+    align-items: center;
+  }
 `;
 const FooterLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @media screen and (min-width: 20rem) and (max-width: 40rem) {
+  @media screen and (min-width: 320px) and (max-width: 768px) {
     justify-content: space-evenly;
   }
 `;
@@ -17,8 +20,19 @@ const FooterLinks = styled.div`
 const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 40rem) {
+  min-width: 9rem;
+  @media screen and (max-width: 640px) {
     &:nth-child(n + 3) {
+      margin-top: 2rem;
+    }
+  }
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    &:nth-child(n + 7) {
+      margin-top: 2rem;
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 910px) {
+    &:last-child {
       margin-top: 2rem;
     }
   }
@@ -26,9 +40,14 @@ const FooterColumn = styled.div`
 
 const FooterColumnBreak = styled.div`
   display: none;
-  @media screen and (max-width: 40rem) {
+  flex-basis: 100%;
+  @media screen and (max-width: 640px) {
     display: flex;
-    flex-basis: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    &:nth-child(6) {
+      display: flex;
+    }
   }
 `;
 const FooterTitle = styled.p`
