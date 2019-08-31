@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import HomeWrapper from "../Home/HomeWrapper";
-
+import SecondSection from "./SecondSection";
+import FooterLink from "./FooterLink";
 const CustomHomeWrapper = styled(HomeWrapper)`
   align-items: initial;
-  @media screen and (min-width: 1024px) {
-    align-items: center;
+  @media screen and (min-width: 1280px) {
+    max-width: 71.75rem;
   }
 `;
 const FooterLinks = styled.div`
@@ -58,16 +59,6 @@ const FooterTitle = styled.p`
   text-transform: uppercase;
 `;
 
-const FooterLink = styled.a`
-  font-style: normal;
-  font-weight: normal;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  text-decoration: none;
-  color: #5b5b5c;
-  margin-top: 0.75rem;
-`;
-
 const FooterLinkMore = styled(FooterLink)`
   font-weight: 500;
   margin-top: 1rem;
@@ -81,85 +72,156 @@ const Divider = styled.hr`
   margin-bottom: 2.5rem;
 `;
 
-const SecondFooterWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const SecondFooterColumn = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
 export default () => {
   return (
     <CustomHomeWrapper>
       <FooterLinks>
         <FooterColumn>
           <FooterTitle>Страны</FooterTitle>
-          <FooterLink href="#">Россия</FooterLink>
-          <FooterLink href="#">Таиланд</FooterLink>
-          <FooterLink href="#">Черногория</FooterLink>
-          <FooterLink href="#">Кипр</FooterLink>
-          <FooterLink href="#">Болгария</FooterLink>
-          <FooterLink href="#">Грузия</FooterLink>
-          <FooterLinkMore href="#">Все страны →</FooterLinkMore>
+          <FooterLink href="#" top="0.75rem">
+            Россия
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Таиланд
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Черногория
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Кипр
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Болгария
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Грузия
+          </FooterLink>
+          <FooterLinkMore href="#" top="0.75rem">
+            Все страны →
+          </FooterLinkMore>
         </FooterColumn>
         <FooterColumn>
           <FooterTitle>Города</FooterTitle>
-          <FooterLink href="#">Москва</FooterLink>
-          <FooterLink href="#">Санкт-Петербург</FooterLink>
-          <FooterLink href="#">Симферополь</FooterLink>
-          <FooterLink href="#">Адлер</FooterLink>
-          <FooterLink href="#">Екатеринбург</FooterLink>
-          <FooterLink href="#">Лондон</FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Москва
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Санкт-Петербург
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Симферополь
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Адлер
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Екатеринбург
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Лондон
+          </FooterLink>
           <FooterLinkMore href="#">Все города →</FooterLinkMore>
         </FooterColumn>
         <FooterColumnBreak />
         <FooterColumn>
           <FooterTitle>Авиакомпании</FooterTitle>
-          <FooterLink href="#">AirBerlin</FooterLink>
-          <FooterLink href="#">Air France</FooterLink>
-          <FooterLink href="#">Alitalia</FooterLink>
-          <FooterLink href="#">Air Baltic</FooterLink>
-          <FooterLink href="#">Emirates</FooterLink>
-          <FooterLink href="#">KLM</FooterLink>
-          <FooterLinkMore href="#">Все авиакомпании →</FooterLinkMore>
+          <FooterLink href="#" top="0.75rem">
+            AirBerlin
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Air France
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Alitalia
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Air Baltic
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Emirates
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            KLM
+          </FooterLink>
+          <FooterLinkMore href="#" top="0.75rem">
+            Все авиакомпании →
+          </FooterLinkMore>
         </FooterColumn>
         <FooterColumn>
           <FooterTitle>АЭРОПОРТЫ</FooterTitle>
-          <FooterLink href="#">Шереметьево</FooterLink>
-          <FooterLink href="#">Курумоч</FooterLink>
-          <FooterLink href="#">Домодедово</FooterLink>
-          <FooterLink href="#">Толмачево</FooterLink>
-          <FooterLink href="#">Владивосток</FooterLink>
-          <FooterLink href="#">Гамбург</FooterLink>
-          <FooterLinkMore href="#">Все аэропорты →</FooterLinkMore>
+          <FooterLink href="#" top="0.75rem">
+            Шереметьево
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Курумоч
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Домодедово
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Толмачево
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Владивосток
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Гамбург
+          </FooterLink>
+          <FooterLinkMore href="#" top="0.75rem">
+            Все аэропорты →
+          </FooterLinkMore>
         </FooterColumn>
         <FooterColumnBreak />
         <FooterColumn>
           <FooterTitle>НАПРАВЛЕНИЯ</FooterTitle>
-          <FooterLink href="#">MOW – SIP</FooterLink>
-          <FooterLink href="#">MOW – AER</FooterLink>
-          <FooterLink href="#">MOW – TIV</FooterLink>
-          <FooterLink href="#">MOW – MRV</FooterLink>
-          <FooterLink href="#">LED – MOW</FooterLink>
-          <FooterLink href="#">MOW – BKK</FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            MOW – SIP
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            MOW – AER
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            MOW – TIV
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            MOW – MRV
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            LED – MOW
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            MOW – BKK
+          </FooterLink>
         </FooterColumn>
         <FooterColumn>
           <FooterTitle>СЕРВИСЫ</FooterTitle>
-          <FooterLink href="#">Горящие авиабилеты</FooterLink>
-          <FooterLink href="#">Календарь низких цен</FooterLink>
-          <FooterLink href="#">Карта низких цен</FooterLink>
-          <FooterLink href="#">Спецпредложения</FooterLink>
-          <FooterLink href="#">Таблица цен</FooterLink>
-          <FooterLink href="#">Блог</FooterLink>
-          <FooterLink href="#">Помощь</FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Горящие авиабилеты
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Календарь низких цен
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Карта низких цен
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Спецпредложения
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Таблица цен
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Блог
+          </FooterLink>
+          <FooterLink href="#" top="0.75rem">
+            Помощь
+          </FooterLink>
         </FooterColumn>
       </FooterLinks>
       <Divider />
-      <SecondFooterWrapper>
-        <SecondFooterColumn></SecondFooterColumn>
-      </SecondFooterWrapper>
+      <FooterLinks>
+        <SecondSection />
+      </FooterLinks>
     </CustomHomeWrapper>
   );
 };
