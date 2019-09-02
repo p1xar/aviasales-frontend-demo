@@ -14,6 +14,7 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const Icon = styled.img`
   width: 0.8125rem;
   height: 0.8125rem;
@@ -25,12 +26,27 @@ const FooterItemsWrapper = styled.div`
   margin-top: ${props => props.top};
   align-items: center;
   align-self: ${props => props.align};
+  @media screen and (max-width: 320px) {
+    flex-wrap: wrap;
+  }
+`;
+
+const CustomFooterItemsWrapper = styled(FooterItemsWrapper)`
+  @media screen and (max-width: 320px) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const AppIcon = styled.img`
   width: 7.8125rem;
   height: 2.625rem;
   margin-right: ${props => props.right};
+  @media screen and (max-width: 320px) {
+    margin-right: 0rem;
+    margin-top: 0.5rem;
+  }
 `;
 export default () => {
   return (
@@ -79,12 +95,12 @@ export default () => {
             Вайбер
           </FooterLink>
         </FooterItemsWrapper>
-        <FooterItemsWrapper top="2rem">
-          <FooterLink href="#">Поиск и бронирование отелей</FooterLink>
-        </FooterItemsWrapper>
       </Column>
       <Column>
-        <FooterItemsWrapper>
+        <CustomFooterItemsWrapper>
+          <FooterItemsWrapper top="2rem">
+            <FooterLink href="#">Поиск и бронирование отелей</FooterLink>
+          </FooterItemsWrapper>
           <AppIcon alt="iOS donwload" src={ios} right="0.625rem" />
           <AppIcon
             alt="Google Play donwload"
@@ -92,7 +108,7 @@ export default () => {
             right="0.625rem"
           />
           <AppIcon alt="Windows phone donwload" src={windows} />
-        </FooterItemsWrapper>
+        </CustomFooterItemsWrapper>
         <FooterItemsWrapper align="flex-end">
           <FooterLink href="#" top="2.125rem">
             © 2007–2018, Aviasales — дешевые авиабилеты
