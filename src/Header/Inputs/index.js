@@ -4,7 +4,7 @@ import arrow from "./arrow.svg";
 import date from "./date.svg";
 import shape from "./shape.svg";
 import plane from "./plane.svg";
-
+import FromInput from "./FromInput";
 const FormContainer = styled.div`
   display: inline;
   position: relative;
@@ -26,18 +26,7 @@ const StyledInput = styled.input`
     width: 17.25rem;
   }
 `;
-const FromInput = styled(StyledInput)`
-  height: 3rem;
-  border-radius: 0.3rem 0 0 0.3rem;
-  color: #4a4a4a;
-  position: relative;
-  @media screen and (max-width: 37.599rem) {
-    border-radius: 0.3rem 0.3rem 0 0;
-  }
-  @media screen and (min-width: 37.699rem) and (max-width: 70.999rem) {
-    border-radius: 0.3rem 0 0 0;
-  }
-`;
+
 const Icon = styled.img`
   position: absolute;
   width: 1rem;
