@@ -6,10 +6,12 @@ import Agencies from "./Agencies";
 import MainOffers from "./MainOffers";
 import MainArticles from "./MainArticles";
 import MobileApplication from "./MobileApplication";
+import Header from "../Header";
 
 export default () => {
   return (
     <div>
+      <Header />
       <TravelList />
       <BestPrices />
       <Agencies />

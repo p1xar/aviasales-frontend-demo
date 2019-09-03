@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import HomeWrapper from "../HomeWrapper";
-
 import phone from "./phone.png";
 import star from "./star.svg";
 import halfstar from "./halfstar.svg";

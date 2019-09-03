@@ -5,20 +5,6 @@ import date from "./date.svg";
 import shape from "./shape.svg";
 import plane from "./plane.svg";
 
-const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 2.5rem;
-  margin-bottom: 15.875rem;
-  @media screen and (max-width: 40rem) {
-    margin-top: 1rem;
-    margin-bottom: 5.5rem;
-  }
-`;
-
 const FormContainer = styled.div`
   display: inline;
   position: relative;
@@ -155,7 +141,7 @@ const BreakColumn = styled.div`
 `;
 export default () => {
   return (
-    <FormWrapper>
+    <React.Fragment>
       <FormContainer>
         <FromInput placeholder="Отправление" />
         <ArrowIcon alt="Arrow" src={arrow} />
@@ -183,6 +169,6 @@ export default () => {
         <SearchButton href="/">Найти билеты</SearchButton>
         <PlaneIcon alt="Plane" src={plane} />
       </CustomFormContainer>
-    </FormWrapper>
+    </React.Fragment>
   );
 };
