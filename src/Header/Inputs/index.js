@@ -4,7 +4,7 @@ import arrow from "./arrow.svg";
 import date from "./date.svg";
 import shape from "./shape.svg";
 import plane from "./plane.svg";
-import FromInput from "./FromInput";
+import { FromInput, ToInput } from "./Inputs";
 const FormContainer = styled.div`
   display: inline;
   position: relative;
@@ -36,12 +36,6 @@ const Icon = styled.img`
 `;
 
 const ArrowIcon = styled(Icon)``;
-
-const ToInput = styled(StyledInput)`
-  @media screen and (min-width: 37.699rem) and (max-width: 70.999rem) {
-    border-radius: 0 0.3rem 0 0;
-  }
-`;
 
 const DatePickerTo = styled(StyledInput)`
   @media screen and (max-width: 70.999rem) {
