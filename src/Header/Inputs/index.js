@@ -5,10 +5,13 @@ import date from "./date.svg";
 import shape from "./shape.svg";
 import plane from "./plane.svg";
 import { FromInput, ToInput } from "./Inputs";
+import Dates from "./Dates";
+
 const FormContainer = styled.div`
   display: inline;
   position: relative;
 `;
+
 const StyledInput = styled.input`
   color: #4a4a4a;
   background: #fff;
