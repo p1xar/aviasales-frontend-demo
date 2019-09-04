@@ -27,7 +27,7 @@ export default styled.div`
   }
   & .react-autosuggest__suggestions-container {
     position: absolute;
-    min-width: 100%;
+    min-width: 98%;
     margin-top: 0.1rem;
     box-shadow: 0px 0px 8px rgba(74, 74, 74, 0.2),
       0px 2px 4px rgba(74, 74, 74, 0.2);
