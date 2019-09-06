@@ -11,11 +11,6 @@
     0px 0.125rem rgba(74, 74, 74, 0.2);
   border-radius: 0.125rem;
 }
-@media screen and (max-width: 320px) {
-  .DayPicker {
-    max-width: 16rem;
-  }
-}
 .DayPicker-wrapper {
   position: relative;
   flex-direction: row;
@@ -179,7 +174,7 @@
   /* background: #effbff; */
   font-weight: 700;
   background-image: url(rectangle.svg);
-  background-position: center center;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -226,8 +221,9 @@
   background: #fff;
   border: none;
   height: 3rem;
-  padding-left: 1rem;
+  padding-left: 0.9rem;
   margin-right: 0.3rem;
+  cursor: pointer;
 }
 
 .DayPickerInput input:placeholder {
@@ -235,10 +231,17 @@
   font-size: 16px;
   line-height: 20px;
 }
-@media screen and (max-width: 70.999rem) {
-  .DayPickerInput {
-    margin-bottom: 0.125rem;
-    width: 17.25rem;
+
+@media screen and (max-width: 1135px) {
+  .DayPickerInput input {
+    width: 8.02rem;
+    margin-right: 0.3rem;
+    font-size: 0.68rem;
+  }
+}
+@media screen and (min-width: 603px) and (max-width: 1120px) {
+  .DayPickerInput:nth-child(even) input {
+    border-radius: 0 0 0 0.3rem;
   }
 }
 
@@ -252,4 +255,16 @@
   z-index: 1;
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 767px) {
+  .DayPicker {
+    min-width: 18.5rem;
+  }
+  .DayPicker-Day {
+    padding: 0.5rem 0.5rem;
+  }
+  .DayPicker-wrapper {
+    width: 18.5rem;
+  }
 }

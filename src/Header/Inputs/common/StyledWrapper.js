@@ -17,8 +17,6 @@ export default styled.div`
     @media screen and (max-width: 1135px) {
       margin-bottom: 0.125rem;
       width: 17.25rem;
-    }
-    @media screen and (max-width: 1400px) {
       border-radius: 0.3rem 0.3rem 0 0;
     }
     @media screen and (min-width: 601px) and (max-width: 1120px) {

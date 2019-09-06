@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import arrow from "./arrow.svg";
-import date from "./date.svg";
+
 import shape from "./shape.svg";
 import plane from "./plane.svg";
 import { FromInput, ToInput } from "./Inputs";
 import Dates from "./Dates";
 import StyledInput from "./common/StyledInput";
-
-const FormContainer = styled.div`
-  display: inline;
-  position: relative;
-`;
+import FormContainer from "./common/FormContainer";
 
 const Icon = styled.img`
   position: absolute;
@@ -23,22 +19,6 @@ const Icon = styled.img`
 
 const ArrowIcon = styled(Icon)``;
 
-const DatePickerTo = styled(StyledInput)`
-  @media screen and (max-width: 70.999rem) {
-    width: 8.02rem;
-    margin-right: 0.15rem;
-  }
-  @media screen and (min-width: 37.699rem) and (max-width: 70rem) {
-    border-radius: 0 0 0 0.3rem;
-  }
-`;
-
-const DatePickerBack = styled(StyledInput)`
-  @media screen and (max-width: 70.999rem) {
-    width: 7.99rem;
-  }
-`;
-
 const Passangers = styled(StyledInput)`
   border-radius: 0 0.3rem 0.3rem 0;
   padding-right: 2rem;
@@ -48,8 +28,6 @@ const Passangers = styled(StyledInput)`
     padding-right: 0;
   }
 `;
-
-const DateIcon = styled(Icon)``;
 
 const ShapeIcon = styled(Icon)`
   width: 0.625rem;
@@ -120,15 +98,7 @@ export default () => {
         <ToInput placeholder="Прибытие" />
       </FormContainer>
       <BreakColumn />
-      <FormContainer>
-        <DatePickerTo placeholder="Туда" />
-        <DateIcon alt="Date" src={date} />
-        <Dates />
-      </FormContainer>
-      <FormContainer>
-        <DatePickerBack placeholder="Обратно" />
-        <DateIcon alt="Date" src={date} />
-      </FormContainer>
+      <Dates />
       <BreakColumn />
       <FormContainer>
         <Passangers placeholder="1 пассажир, эконом" readOnly />
