@@ -6,7 +6,7 @@ import shape from "./shape.svg";
 import plane from "./plane.svg";
 import { FromInput, ToInput } from "./Inputs";
 import Dates from "./Dates";
-import StyledInput from "./common/StyledInput";
+import Passangers from "./Passengers";
 import FormContainer from "./common/FormContainer";
 
 const Icon = styled.img`
@@ -18,16 +18,6 @@ const Icon = styled.img`
 `;
 
 const ArrowIcon = styled(Icon)``;
-
-const Passangers = styled(StyledInput)`
-  border-radius: 0 0.3rem 0.3rem 0;
-  padding-right: 2rem;
-  cursor: pointer;
-  @media screen and (max-width: 70.999rem) {
-    border-radius: 0 0 0.3rem 0.3rem;
-    padding-right: 0;
-  }
-`;
 
 const ShapeIcon = styled(Icon)`
   width: 0.625rem;
