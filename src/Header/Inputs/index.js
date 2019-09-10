@@ -91,7 +91,7 @@ export default () => {
       <Dates />
       <BreakColumn />
       <FormContainer>
-        <Passangers placeholder="1 пассажир, эконом" readOnly />
+        <Passangers />
         <ShapeIcon alt="Triangle" src={shape} />
       </FormContainer>
       <BreakColumn />

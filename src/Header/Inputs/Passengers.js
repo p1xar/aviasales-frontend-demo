@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import StyledInput from "./common/StyledInput";
+import ToggleBox from "./ToggleBox";
 
 const PassengersInput = styled(StyledInput)`
+  position: relative;
   border-radius: 0 0.3rem 0.3rem 0;
   padding-right: 2rem;
   cursor: pointer;
@@ -12,8 +14,6 @@ const PassengersInput = styled(StyledInput)`
   }
 `;
 
-const ToggleBoxContainer = styled.div``;
-
 class Passengers extends React.Component {
   constructor(props) {
     super(props);
@@ -21,57 +21,90 @@ class Passengers extends React.Component {
       opened: false,
       text: " пассажир",
       passAmount: 0,
-      isBusiness: false
-    };
-    this.toggleBox = this.toggleBox.bind(this);
-  }
-
-  toggleBox() {
-    const { opened } = this.state.opened;
-    this.setState({ opened: !opened });
-  }
-
-  updateValue = value => {
-    let summary = value.adults + value.teen + value.children;
-    this.setState({
-      passAmount: summary,
-      isBusiness: value.isBusiness
-    });
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <PassengersInput
-          value={!this.state.isBusiness ? this.state.passAmount : 999}
-        />
-        <ToggleBox updateValue={this.updateValue} />
-      </React.Fragment>
-    );
-  }
-}
-
-class ToggleBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      adults: 4,
+      adults: 1,
       teen: 1,
       children: 1,
       isBusiness: false
     };
+    this.handleAdultsChange = this.handleAdultsChange.bind(this);
   }
+
+  handleAdultsChange(value) {
+    this.setState({ adults: value });
+  }
+  handleTeenChange(value) {
+    this.setState({ teen: value });
+  }
+  handleChildrenChange(value) {
+    this.setState({ children: value });
+  }
+
+  incrementAdults() {
+    this.setState({
+      adults: this.state.adults + 1
+    });
+  }
+
+  decrementAdults() {
+    if (this.state.adults !== 0 || this.state.adults > 0) {
+      this.setState({
+        adults: this.state.adults - 1
+      });
+    }
+  }
+
+  incrementTeens() {
+    this.setState({
+      teen: this.state.teen + 1
+    });
+  }
+
+  decrementTeens() {
+    if (this.state.teen !== 0 || this.state.teen > 0) {
+      this.setState({
+        teen: this.state.teen - 1
+      });
+    }
+  }
+
+  incrementChildrens() {
+    this.setState({
+      children: this.state.children + 1
+    });
+  }
+
+  decrementChildrens() {
+    if (this.state.children !== 0 || this.state.children > 0) {
+      this.setState({
+        children: this.state.children - 1
+      });
+    }
+  }
+
   render() {
+    const adults = this.state.adults;
+    const teen = this.state.teen;
+    const children = this.state.children;
+    const isBusiness = this.state.isBusiness;
+    const summary = this.state.adults + this.state.teen + this.state.children;
     return (
       <React.Fragment>
-        <button
-          href="#"
-          onClick={() => {
-            this.props.updateValue(this.state);
-          }}
-        >
-          pososi
-        </button>
+        <PassengersInput value={summary}></PassengersInput>
+        <ToggleBox
+          adults={adults}
+          teen={teen}
+          children={children}
+          isBusiness={isBusiness}
+          onAdultsChange={this.handleAdultsChange}
+          onTeenChange={this.handleChildrenChange}
+          onChildrenChange={this.handleChildrenChange}
+          incrementAdult={this.incrementAdults.bind(this)}
+          decrementAdult={this.decrementAdults.bind(this)}
+          incrementTeen={this.incrementTeens.bind(this)}
+          decrementTeen={this.decrementTeens.bind(this)}
+          incrementChildren={this.incrementChildrens.bind(this)}
+          decrementChildren={this.decrementChildrens.bind(this)}
+        ></ToggleBox>
       </React.Fragment>
     );
   }
