@@ -17,13 +17,26 @@ const Label = styled.label`
 class ToggleBox extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeAdults = this.handleChangeAdults.bind(this);
+    this.handleChangeTeen = this.handleChangeTeen.bind(this);
+    this.handleChangeChildren = this.handleChangeChildren.bind(this);
+    // this.handleChangeisBusiness = this.handleChangeisBusiness.bind(this);
   }
 
-  handleChange(e) {
+  handleChangeAdults(e) {
     this.props.onAdultsChange(e.target.value);
+  }
+
+  handleChangeTeen(e) {
     this.props.onTeenChange(e.target.value);
+  }
+
+  handleChangeChildren(e) {
     this.props.onChildrenChange(e.target.value);
+  }
+
+  handleChangeisBusiness(e) {
+    this.props.onisBusinessChange(e.target.value);
   }
 
   render() {
@@ -36,22 +49,29 @@ class ToggleBox extends React.Component {
         <ToggleBoxContainer>
           <div>
             <button onClick={this.props.decrementAdult}>-</button>
-            <input value={adults} onChange={this.handleChange} readOnly />
+            <input value={adults} onChange={this.handleChangeAdults} readOnly />
             <button onClick={this.props.incrementAdult}>+</button>
           </div>
           <div>
             <button onClick={this.props.decrementTeen}>-</button>
-            <input value={teen} onChange={this.handleChange} readOnly />
+            <input value={teen} onChange={this.handleChangeTeen} readOnly />
             <button onClick={this.props.incrementTeen}>+</button>
           </div>
           <div>
             <button onClick={this.props.decrementChildren}>-</button>
-            <input value={children} onChange={this.handleChange} readOnly />
+            <input
+              value={children}
+              onChange={this.handleChangeChildren}
+              readOnly
+            />
             <button onClick={this.props.incrementChildren}>+</button>
           </div>
           <div>
-            <input value={isBusiness} readOnly />
-            <button>+</button>
+            <input
+              type="checkbox"
+              checked={isBusiness}
+              onChange={this.props.toggleCheckBox}
+            />
           </div>
         </ToggleBoxContainer>
       </React.Fragment>

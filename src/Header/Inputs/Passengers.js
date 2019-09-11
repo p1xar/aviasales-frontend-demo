@@ -24,9 +24,11 @@ class Passengers extends React.Component {
       adults: 1,
       teen: 1,
       children: 1,
-      isBusiness: false
+      isBusiness: true
     };
     this.handleAdultsChange = this.handleAdultsChange.bind(this);
+    this.handleTeenChange = this.handleTeenChange.bind(this);
+    this.handleChildrenChange = this.handleChildrenChange.bind(this);
   }
 
   handleAdultsChange(value) {
@@ -38,6 +40,10 @@ class Passengers extends React.Component {
   handleChildrenChange(value) {
     this.setState({ children: value });
   }
+
+  toggleCheckBox = () => {
+    this.setState({ isBusiness: !this.state.isBusiness });
+  };
 
   incrementAdults() {
     this.setState({
@@ -89,7 +95,13 @@ class Passengers extends React.Component {
     const summary = this.state.adults + this.state.teen + this.state.children;
     return (
       <React.Fragment>
-        <PassengersInput value={summary}></PassengersInput>
+        <PassengersInput
+          value={
+            isBusiness
+              ? summary + " пассажир, бизнес"
+              : summary + " пассажир, эконом"
+          }
+        ></PassengersInput>
         <ToggleBox
           adults={adults}
           teen={teen}
@@ -98,6 +110,7 @@ class Passengers extends React.Component {
           onAdultsChange={this.handleAdultsChange}
           onTeenChange={this.handleChildrenChange}
           onChildrenChange={this.handleChildrenChange}
+          toggleCheckBox={this.toggleCheckBox}
           incrementAdult={this.incrementAdults.bind(this)}
           decrementAdult={this.decrementAdults.bind(this)}
           incrementTeen={this.incrementTeens.bind(this)}
