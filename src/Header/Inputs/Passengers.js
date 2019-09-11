@@ -22,9 +22,9 @@ class Passengers extends React.Component {
       text: " пассажир",
       passAmount: 0,
       adults: 1,
-      teen: 1,
-      children: 1,
-      isBusiness: true
+      teen: 0,
+      children: 0,
+      isBusiness: false
     };
     this.handleAdultsChange = this.handleAdultsChange.bind(this);
     this.handleTeenChange = this.handleTeenChange.bind(this);
