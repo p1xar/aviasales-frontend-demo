@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import StyledInput from "./common/StyledInput";
 import ToggleBox from "./ToggleBox";
-
 const PassengersInput = styled(StyledInput)`
   position: relative;
   border-radius: 0 0.3rem 0.3rem 0;
@@ -11,6 +10,21 @@ const PassengersInput = styled(StyledInput)`
   @media screen and (max-width: 70.999rem) {
     border-radius: 0 0 0.3rem 0.3rem;
     padding-right: 0;
+  }
+`;
+
+const ToggleBoxContainer = styled.div`
+  width: 13.1875rem;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0rem 0rem 0.5rem rgba(74, 74, 74, 0.2),
+    0rem 0.125rem 0.25rem rgba(74, 74, 74, 0.2);
+  border-radius: 0.125rem;
+  padding: 0 1rem;
+  margin-top: 0.1rem;
+  z-index: 2;
+  @media screen and (max-width: 1135px) {
+    width: 16.2rem;
   }
 `;
 
@@ -24,11 +38,13 @@ class Passengers extends React.Component {
       adults: 1,
       teen: 0,
       children: 0,
-      isBusiness: false
+      isBusiness: false,
+      hideDiv: true
     };
     this.handleAdultsChange = this.handleAdultsChange.bind(this);
     this.handleTeenChange = this.handleTeenChange.bind(this);
     this.handleChildrenChange = this.handleChildrenChange.bind(this);
+    this.toggleBoxOpen = this.toggleBoxOpen.bind(this);
   }
 
   handleAdultsChange(value) {
@@ -43,6 +59,10 @@ class Passengers extends React.Component {
 
   toggleCheckBox = () => {
     this.setState({ isBusiness: !this.state.isBusiness });
+  };
+
+  toggleBoxOpen = () => {
+    this.setState({ hideDiv: !this.state.hideDiv });
   };
 
   incrementAdults() {
@@ -101,23 +121,27 @@ class Passengers extends React.Component {
               ? summary + " пассажир, бизнес"
               : summary + " пассажир, эконом"
           }
+          onClick={this.toggleBoxOpen}
+          readOnly
         ></PassengersInput>
-        <ToggleBox
-          adults={adults}
-          teen={teen}
-          children={children}
-          isBusiness={isBusiness}
-          onAdultsChange={this.handleAdultsChange}
-          onTeenChange={this.handleChildrenChange}
-          onChildrenChange={this.handleChildrenChange}
-          toggleCheckBox={this.toggleCheckBox}
-          incrementAdult={this.incrementAdults.bind(this)}
-          decrementAdult={this.decrementAdults.bind(this)}
-          incrementTeen={this.incrementTeens.bind(this)}
-          decrementTeen={this.decrementTeens.bind(this)}
-          incrementChildren={this.incrementChildrens.bind(this)}
-          decrementChildren={this.decrementChildrens.bind(this)}
-        ></ToggleBox>
+        <ToggleBoxContainer hidden={this.state.hideDiv}>
+          <ToggleBox
+            adults={adults}
+            teen={teen}
+            children={children}
+            isBusiness={isBusiness}
+            onAdultsChange={this.handleAdultsChange}
+            onTeenChange={this.handleChildrenChange}
+            onChildrenChange={this.handleChildrenChange}
+            toggleCheckBox={this.toggleCheckBox}
+            incrementAdult={this.incrementAdults.bind(this)}
+            decrementAdult={this.decrementAdults.bind(this)}
+            incrementTeen={this.incrementTeens.bind(this)}
+            decrementTeen={this.decrementTeens.bind(this)}
+            incrementChildren={this.incrementChildrens.bind(this)}
+            decrementChildren={this.decrementChildrens.bind(this)}
+          ></ToggleBox>
+        </ToggleBoxContainer>
       </React.Fragment>
     );
   }

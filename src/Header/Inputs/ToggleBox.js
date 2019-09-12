@@ -1,22 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const ToggleBoxContainer = styled.div`
-  width: 13.1875rem;
-  background: tomato;
-  position: absolute;
-  background: #fff;
-  box-shadow: 0rem 0rem 0.5rem rgba(74, 74, 74, 0.2),
-    0rem 0.125rem 0.25rem rgba(74, 74, 74, 0.2);
-  border-radius: 0.125rem;
-  padding: 0 1rem;
-  margin-top: 0.1rem;
-  z-index: 2;
-  @media screen and (max-width: 1135px) {
-    width: 16.2rem;
-  }
-`;
-
 const Label = styled.label`
   font-style: normal;
   font-weight: normal;
@@ -96,6 +80,13 @@ class ToggleBox extends React.Component {
     this.props.onChildrenChange(e.target.value);
   }
 
+  handleClickOutside = e => {
+    if (this.props.open !== false) {
+      this.props.toggleBoxChange(!this.props.open);
+      console.log("handle called");
+    }
+  };
+
   render() {
     const adults = this.props.adults;
     const teen = this.props.teen;
@@ -103,53 +94,49 @@ class ToggleBox extends React.Component {
     const isBusiness = this.props.isBusiness;
     return (
       <React.Fragment>
-        <ToggleBoxContainer>
-          <ToggleBoxItem>
-            <Label>Взрослые</Label>
-            <ToggleBoxControls>
-              <MinusButton onClick={this.props.decrementAdult}>-</MinusButton>
-              <Counter
-                value={adults}
-                onChange={this.handleChangeAdults}
-                readOnly
-              />
-              <PlusButton onClick={this.props.incrementAdult}>+</PlusButton>
-            </ToggleBoxControls>
-          </ToggleBoxItem>
-          <ToggleBoxItem>
-            <Label>Дети до 12 лет</Label>
-            <ToggleBoxControls>
-              <MinusButton onClick={this.props.decrementTeen}>-</MinusButton>
-              <Counter value={teen} onChange={this.handleChangeTeen} readOnly />
-              <PlusButton onClick={this.props.incrementTeen}>+</PlusButton>
-            </ToggleBoxControls>
-          </ToggleBoxItem>
-          <ToggleBoxItem>
-            <Label>Дети до 2 лет</Label>
-            <ToggleBoxControls>
-              <MinusButton onClick={this.props.decrementChildren}>
-                -
-              </MinusButton>
-              <Counter
-                value={children}
-                onChange={this.handleChangeChildren}
-                readOnly
-              />
-              <PlusButton onClick={this.props.incrementChildren}>+</PlusButton>
-            </ToggleBoxControls>
-          </ToggleBoxItem>
-          <ToggleBoxItem>
-            <ToggleBoxControls>
-              <Checkbox
-                type="checkbox"
-                checked={isBusiness}
-                onChange={this.props.toggleCheckBox}
-                right="0.375rem"
-              />
-              <Label>Бизнес-класс</Label>
-            </ToggleBoxControls>
-          </ToggleBoxItem>
-        </ToggleBoxContainer>
+        <ToggleBoxItem>
+          <Label>Взрослые</Label>
+          <ToggleBoxControls>
+            <MinusButton onClick={this.props.decrementAdult}>-</MinusButton>
+            <Counter
+              value={adults}
+              onChange={this.handleChangeAdults}
+              readOnly
+            />
+            <PlusButton onClick={this.props.incrementAdult}>+</PlusButton>
+          </ToggleBoxControls>
+        </ToggleBoxItem>
+        <ToggleBoxItem>
+          <Label>Дети до 12 лет</Label>
+          <ToggleBoxControls>
+            <MinusButton onClick={this.props.decrementTeen}>-</MinusButton>
+            <Counter value={teen} onChange={this.handleChangeTeen} readOnly />
+            <PlusButton onClick={this.props.incrementTeen}>+</PlusButton>
+          </ToggleBoxControls>
+        </ToggleBoxItem>
+        <ToggleBoxItem>
+          <Label>Дети до 2 лет</Label>
+          <ToggleBoxControls>
+            <MinusButton onClick={this.props.decrementChildren}>-</MinusButton>
+            <Counter
+              value={children}
+              onChange={this.handleChangeChildren}
+              readOnly
+            />
+            <PlusButton onClick={this.props.incrementChildren}>+</PlusButton>
+          </ToggleBoxControls>
+        </ToggleBoxItem>
+        <ToggleBoxItem>
+          <ToggleBoxControls>
+            <Checkbox
+              type="checkbox"
+              checked={isBusiness}
+              onChange={this.props.toggleCheckBox}
+              right="0.375rem"
+            />
+            <Label>Бизнес-класс</Label>
+          </ToggleBoxControls>
+        </ToggleBoxItem>
       </React.Fragment>
     );
   }
