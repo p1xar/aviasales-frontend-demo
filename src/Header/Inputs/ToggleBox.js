@@ -12,6 +12,9 @@ const ToggleBoxContainer = styled.div`
   padding: 0 1rem;
   margin-top: 0.1rem;
   z-index: 2;
+  @media screen and (max-width: 1135px) {
+    width: 16.2rem;
+  }
 `;
 
 const Label = styled.label`
@@ -34,6 +37,8 @@ const ToggleBoxItem = styled.div`
 const ToggleBoxControls = styled.div`
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
 `;
 
 const Button = styled.button`
@@ -63,6 +68,12 @@ const Counter = styled.input`
   text-align: center;
   border: 1px solid #dbdbdb;
   margin-right: ${props => props.right || "initial"};
+`;
+
+const Checkbox = styled(Counter)`
+  width: 1.8rem;
+  height: 1.8rem;
+  max-width: 100%;
 `;
 
 class ToggleBox extends React.Component {
@@ -129,7 +140,7 @@ class ToggleBox extends React.Component {
           </ToggleBoxItem>
           <ToggleBoxItem>
             <ToggleBoxControls>
-              <Counter
+              <Checkbox
                 type="checkbox"
                 checked={isBusiness}
                 onChange={this.props.toggleCheckBox}
