@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import arrow from "./arrow.svg";
+import { Link } from "react-router-dom";
 
 import shape from "./shape.svg";
 import plane from "./plane.svg";
@@ -34,7 +35,7 @@ const CustomFormContainer = styled(FormContainer)`
   border-radius: 0.3rem;
 `;
 
-const SearchButton = styled.a`
+const SearchButton = styled(Link)`
   color: white;
   border: 0;
   border-radius: 0.25rem;
@@ -96,7 +97,7 @@ export default () => {
       </FormContainer>
       <BreakColumn />
       <CustomFormContainer>
-        <SearchButton href="/">Найти билеты</SearchButton>
+        <SearchButton to="/search">Найти билеты</SearchButton>
         <PlaneIcon alt="Plane" src={plane} />
       </CustomFormContainer>
     </React.Fragment>
