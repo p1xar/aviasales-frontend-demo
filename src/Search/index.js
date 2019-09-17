@@ -40,7 +40,7 @@ export default () => {
       <SearchContainer>
         <SearchWrapper>
           <Sidebar />
-          <Tickets> dolbaeb</Tickets>
+          <Tickets></Tickets>
         </SearchWrapper>
       </SearchContainer>
     </React.Fragment>

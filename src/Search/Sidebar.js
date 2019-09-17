@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import triangle from "./triangle.svg";
 import clear from "./clear.svg";
+import Slider, { Range } from "rc-slider";
+import "rc-slider/assets/index.css";
 
 const SidebarWrapper = styled.div`
   width: 18.75rem;
@@ -53,7 +55,7 @@ const SidebarItems = styled(SidebarSection)`
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
   max-height: ${props => props.maxHeight || "18.75rem"};
-  overflow: hidden;
+  overflow-y: hidden;
 `;
 
 const CheckBoxItem = styled(SidebarTitle)`
@@ -77,18 +79,31 @@ const CheckBox = styled.div`
   margin-right: 0.375rem;
 `;
 
+const Hr = styled.hr`
+  background-color: #dddddd;
+  border: 0;
+  height: 0.0625rem;
+`;
+
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      transfer: true
+      transfer: true,
+      timeFlight: true
     };
     this.handleTransferChange = this.handleTransferChange.bind(this);
+    this.handleTimeFlightChange = this.handleTimeFlightChange.bind(this);
   }
 
   handleTransferChange(event) {
     event.preventDefault();
     this.setState({ transfer: !this.state.transfer });
+  }
+
+  handleTimeFlightChange(event) {
+    event.preventDefault();
+    this.setState({ timeFlight: !this.state.timeFlight });
   }
   render() {
     return (
@@ -130,7 +145,33 @@ class Sidebar extends React.Component {
               </CheckBoxItem>
             </SidebarItems>
           </SidebarSection>
-          <hr />
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={this.state.timeFlight ? "" : "rotate(180deg)"}
+              />
+              <SidebarTitleText href="#" onClick={this.handleTimeFlightChange}>
+                Время вылета и прибытия
+              </SidebarTitleText>
+              <Clear
+                alt="Clear"
+                src={clear}
+                display={this.state.timeFlight ? "flex" : "none"}
+                onClick={this.handleTimeFlightChange}
+              />
+            </SidebarTitle>
+            <SidebarItems
+              maxHeight={this.state.timeFlight ? "18.75rem" : "0rem"}
+            >
+              <CheckBoxItem>
+                <Slider />
+                <Range />
+              </CheckBoxItem>
+            </SidebarItems>
+          </SidebarSection>
         </SidebarWrapper>
       </React.Fragment>
     );
