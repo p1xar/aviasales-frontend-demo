@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import triangle from "./triangle.svg";
 import clear from "./clear.svg";
-import Slider, { Range } from "rc-slider";
+import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import planeicon from "./planeicon.svg";
 
 const SidebarWrapper = styled.div`
   width: 18.75rem;
@@ -54,11 +55,18 @@ const SidebarItems = styled(SidebarSection)`
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  max-height: ${props => props.maxHeight || "18.75rem"};
+  max-height: ${props => props.maxHeight || "20.75rem"};
   overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
 `;
 
-const CheckBoxItem = styled(SidebarTitle)`
+const SidebarItem = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CheckboxItem = styled(SidebarTitle)`
   height: 2.25rem;
 `;
 
@@ -83,17 +91,65 @@ const Hr = styled.hr`
   background-color: #dddddd;
   border: 0;
   height: 0.0625rem;
+  margin-top: 1rem;
 `;
+
+const RouteWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: ${props => props.top || "initial"};
+`;
+
+const RouteFrom = styled.p`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: #323333;
+  margin-right: ${props => props.right || "0"};
+`;
+
+const RouteTo = styled(RouteFrom)``;
+
+const PlaneIcon = styled.img`
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-right: 0.3125rem;
+`;
+
+const SliderWrapper = styled.div`
+  display: flex;
+`;
+
+const SliderSubTitle = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: #323333;
+  margin-bottom: 0rem;
+`;
+
+const SliderLabelsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SliderLabel = styled(SliderSubTitle)``;
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       transfer: true,
-      timeFlight: true
+      timeFlight: true,
+      flightDuration: true
     };
     this.handleTransferChange = this.handleTransferChange.bind(this);
     this.handleTimeFlightChange = this.handleTimeFlightChange.bind(this);
+    this.handleTimeFlightDurationChange = this.handleTimeFlightDurationChange.bind(
+      this
+    );
   }
 
   handleTransferChange(event) {
@@ -105,6 +161,11 @@ class Sidebar extends React.Component {
     event.preventDefault();
     this.setState({ timeFlight: !this.state.timeFlight });
   }
+
+  handleTimeFlightDurationChange(event) {
+    event.preventDefault();
+    this.setState({ flightDuration: !this.state.flightDuration });
+  }
   render() {
     return (
       <React.Fragment>
@@ -114,7 +175,7 @@ class Sidebar extends React.Component {
               <Triangle
                 alt="Triangle"
                 src={triangle}
-                rotate={this.state.transfer ? "" : "rotate(180deg)"}
+                rotate={this.state.transfer ? "" : "rotate(-90deg)"}
               />
               <SidebarTitleText href="#" onClick={this.handleTransferChange}>
                 ПЕРЕСАДКИ
@@ -127,22 +188,22 @@ class Sidebar extends React.Component {
               />
             </SidebarTitle>
             <SidebarItems maxHeight={this.state.transfer ? "18.75rem" : "0rem"}>
-              <CheckBoxItem>
+              <CheckboxItem>
                 <CheckBox />
                 <CheckBoxLabel>Все</CheckBoxLabel>
-              </CheckBoxItem>
-              <CheckBoxItem>
+              </CheckboxItem>
+              <CheckboxItem>
                 <CheckBox />
                 <CheckBoxLabel>Без пересадок</CheckBoxLabel>
-              </CheckBoxItem>
-              <CheckBoxItem>
+              </CheckboxItem>
+              <CheckboxItem>
                 <CheckBox />
                 <CheckBoxLabel>2 пересадки</CheckBoxLabel>
-              </CheckBoxItem>
-              <CheckBoxItem>
+              </CheckboxItem>
+              <CheckboxItem>
                 <CheckBox />
                 <CheckBoxLabel>3 пересадки</CheckBoxLabel>
-              </CheckBoxItem>
+              </CheckboxItem>
             </SidebarItems>
           </SidebarSection>
           <Hr />
@@ -151,7 +212,7 @@ class Sidebar extends React.Component {
               <Triangle
                 alt="Triangle"
                 src={triangle}
-                rotate={this.state.timeFlight ? "" : "rotate(180deg)"}
+                rotate={this.state.timeFlight ? "" : "rotate(-90deg)"}
               />
               <SidebarTitleText href="#" onClick={this.handleTimeFlightChange}>
                 Время вылета и прибытия
@@ -163,15 +224,124 @@ class Sidebar extends React.Component {
                 onClick={this.handleTimeFlightChange}
               />
             </SidebarTitle>
-            <SidebarItems
-              maxHeight={this.state.timeFlight ? "18.75rem" : "0rem"}
-            >
-              <CheckBoxItem>
-                <Slider />
-                <Range />
-              </CheckBoxItem>
+            <SidebarItems maxHeight={this.state.timeFlight ? "30rem" : "0rem"}>
+              <SidebarItem>
+                <RouteWrapper>
+                  <RouteFrom right={"0.3125rem"}>Москва</RouteFrom>
+                  <PlaneIcon alt="Plane Icon" src={planeicon} />
+                  <RouteTo>Барселона</RouteTo>
+                </RouteWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <SliderSubTitle>Вылет из Москвы:</SliderSubTitle>
+                <SliderLabelsWrapper>
+                  <SliderLabel>c 00:05, 24 фев</SliderLabel>
+                  <SliderLabel>до 23:45, 24 фев</SliderLabel>
+                </SliderLabelsWrapper>
+                <SliderWrapper>
+                  <Slider />
+                </SliderWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <SliderSubTitle>Прибытие в Барселону: </SliderSubTitle>
+                <SliderLabelsWrapper>
+                  <SliderLabel>c 03:05, 24 фев</SliderLabel>
+                  <SliderLabel>до 13:50, 26 фев</SliderLabel>
+                </SliderLabelsWrapper>
+                <SliderWrapper>
+                  <Slider />
+                </SliderWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <RouteWrapper top={"1.5rem"}>
+                  <RouteFrom right={"0.3125rem"}>Барселона</RouteFrom>
+                  <PlaneIcon alt="Plane Icon" src={planeicon} />
+                  <RouteTo>Москва</RouteTo>
+                </RouteWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <SliderSubTitle>Вылет из Барселоны: </SliderSubTitle>
+                <SliderLabelsWrapper>
+                  <SliderLabel>c 06:00, 3 мар</SliderLabel>
+                  <SliderLabel>до 23:45, 3 мар</SliderLabel>
+                </SliderLabelsWrapper>
+                <SliderWrapper>
+                  <Slider />
+                </SliderWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <SliderSubTitle>Прибытие в Москву: </SliderSubTitle>
+                <SliderLabelsWrapper>
+                  <SliderLabel>c 15:00, 3 мар</SliderLabel>
+                  <SliderLabel>до 09:55, 5 мар</SliderLabel>
+                </SliderLabelsWrapper>
+                <SliderWrapper>
+                  <Slider />
+                </SliderWrapper>
+              </SidebarItem>
             </SidebarItems>
           </SidebarSection>
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={this.state.flightDuration ? "" : "rotate(-90deg)"}
+              />
+              <SidebarTitleText
+                href="#"
+                onClick={this.handleTimeFlightDurationChange}
+              >
+                Время вылета и прибытия
+              </SidebarTitleText>
+              <Clear
+                alt="Clear"
+                src={clear}
+                display={this.state.flightDuration ? "flex" : "none"}
+                onClick={this.handleTimeFlightDurationChange}
+              />
+            </SidebarTitle>
+            <SidebarItems
+              maxHeight={this.state.flightDuration ? "30rem" : "0rem"}
+            >
+              <SidebarItem>
+                <RouteWrapper>
+                  <RouteFrom right={"0.3125rem"}>Москва</RouteFrom>
+                  <PlaneIcon alt="Plane Icon" src={planeicon} />
+                  <RouteTo>Барселона</RouteTo>
+                </RouteWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <SliderLabelsWrapper>
+                  <SliderLabel>от 04ч 20м</SliderLabel>
+                  <SliderLabel>до 48ч 50м</SliderLabel>
+                </SliderLabelsWrapper>
+                <SliderWrapper>
+                  <Slider />
+                </SliderWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <RouteWrapper>
+                  <RouteFrom top={"1.5rem"} right={"0.3125rem"}>
+                    Барселона
+                  </RouteFrom>
+                  <PlaneIcon alt="Plane Icon" src={planeicon} />
+                  <RouteTo>Москва</RouteTo>
+                </RouteWrapper>
+              </SidebarItem>
+              <SidebarItem>
+                <SliderLabelsWrapper>
+                  <SliderLabel>от 04ч 10м</SliderLabel>
+                  <SliderLabel>до 41ч 20м</SliderLabel>
+                </SliderLabelsWrapper>
+                <SliderWrapper>
+                  <Slider />
+                </SliderWrapper>
+              </SidebarItem>
+            </SidebarItems>
+          </SidebarSection>
+          <Hr />
         </SidebarWrapper>
       </React.Fragment>
     );

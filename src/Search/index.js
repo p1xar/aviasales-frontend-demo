@@ -25,7 +25,6 @@ const SearchWrapper = styled.div`
 const Tickets = styled.div`
   display: flex;
   flex-direction: column;
-  background: green;
   width: 44.5625rem;
 `;
 export default () => {
