@@ -29,10 +29,10 @@ const SidebarTitleText = styled.a`
   font-style: normal;
   font-weight: 500;
   font-size: 0.75rem;
-  line-height: 1.125rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: #5b5b5c;
+  color: ${props => props.color || "#5b5b5c"};
+  margin-bottom: ${props => props.bottom || "initial"};
 `;
 
 const Triangle = styled.img`
@@ -76,6 +76,11 @@ const CheckBoxLabel = styled.p`
   font-size: 0.75rem;
   line-height: 2.25rem;
   color: #4a4a4a;
+`;
+
+const CheckBoxSubLabel = styled(CheckBoxLabel)`
+  margin-left: auto;
+  color: #a0b0b9;
 `;
 
 const CheckBox = styled.div`
@@ -125,7 +130,6 @@ const SliderSubTitle = styled.p`
   font-style: normal;
   font-weight: normal;
   font-size: 0.75rem;
-  line-height: 1.125rem;
   color: #323333;
   margin-bottom: 0rem;
 `;
@@ -137,21 +141,41 @@ const SliderLabelsWrapper = styled.div`
 
 const SliderLabel = styled(SliderSubTitle)``;
 
+const SidebarTitleSubText = styled.p`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: #a0b0b9;
+  margin-left: 0.5rem;
+`;
+
+const SubTitle = styled.p`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: #323333;
+`;
+
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       transfer: true,
       timeFlight: true,
-      flightDuration: true
+      flightDuration: true,
+      aviacompanies: true
     };
     this.handleTransferChange = this.handleTransferChange.bind(this);
     this.handleTimeFlightChange = this.handleTimeFlightChange.bind(this);
     this.handleTimeFlightDurationChange = this.handleTimeFlightDurationChange.bind(
       this
     );
+    this.handleAviacompaniesChange = this.handleAviacompaniesChange.bind(this);
   }
 
+  //better make universal handler
   handleTransferChange(event) {
     event.preventDefault();
     this.setState({ transfer: !this.state.transfer });
@@ -166,6 +190,12 @@ class Sidebar extends React.Component {
     event.preventDefault();
     this.setState({ flightDuration: !this.state.flightDuration });
   }
+
+  handleAviacompaniesChange(event) {
+    event.preventDefault();
+    this.setState({ aviacompanies: !this.state.aviacompanies });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -322,10 +352,8 @@ class Sidebar extends React.Component {
                 </SliderWrapper>
               </SidebarItem>
               <SidebarItem>
-                <RouteWrapper>
-                  <RouteFrom top={"1.5rem"} right={"0.3125rem"}>
-                    Барселона
-                  </RouteFrom>
+                <RouteWrapper top={"1.5rem"}>
+                  <RouteFrom right={"0.3125rem"}>Барселона</RouteFrom>
                   <PlaneIcon alt="Plane Icon" src={planeicon} />
                   <RouteTo>Москва</RouteTo>
                 </RouteWrapper>
@@ -342,6 +370,155 @@ class Sidebar extends React.Component {
             </SidebarItems>
           </SidebarSection>
           <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={this.state.aviacompanies ? "" : "rotate(-90deg)"}
+              />
+              <SidebarTitleText
+                href="#"
+                onClick={this.handleAviacompaniesChange}
+              >
+                Авиакомпании
+              </SidebarTitleText>
+              <SidebarTitleSubText>43</SidebarTitleSubText>
+              <Clear
+                alt="Clear"
+                src={clear}
+                display={this.state.aviacompanies ? "flex" : "none"}
+                onClick={this.handleAviacompaniesChange}
+              />
+            </SidebarTitle>
+            <SidebarItems
+              maxHeight={this.state.aviacompanies ? "45rem" : "0rem"}
+            >
+              <SidebarItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Несколько авиакомпаний</CheckBoxLabel>
+                </CheckboxItem>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: "normal",
+                    fontSize: "0.75rem",
+                    lineHeight: "1rem"
+                  }}
+                >
+                  Показывать билеты с перелетами, выполняемыми несколькими
+                  авиакомпаниями, включая выбранную
+                </p>
+              </SidebarItem>
+              <SidebarItem>
+                <SubTitle>Альянсы</SubTitle>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Все</CheckBoxLabel>
+                  <CheckBoxSubLabel>11 150 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Aegean Airlines</CheckBoxLabel>
+                  <CheckBoxSubLabel>20 357 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Air Algerie</CheckBoxLabel>
+                  <CheckBoxSubLabel>29 105 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Air Europa</CheckBoxLabel>
+                  <CheckBoxSubLabel>22 202 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Air France</CheckBoxLabel>
+                  <CheckBoxSubLabel>17 050 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Air Moldova</CheckBoxLabel>
+                  <CheckBoxSubLabel>22 613 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Alitalia</CheckBoxLabel>
+                  <CheckBoxSubLabel>22 717 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Alitalia CityLiner</CheckBoxLabel>
+                  <CheckBoxSubLabel>20 271 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Belle Air</CheckBoxLabel>
+                  <CheckBoxSubLabel>18 371 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>British Airways</CheckBoxLabel>
+                  <CheckBoxSubLabel>23 839 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Brussels Airlines</CheckBoxLabel>
+                  <CheckBoxSubLabel>11 150 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+                <CheckboxItem>
+                  <CheckBox />
+                  <CheckBoxLabel>Bulgaria Air</CheckBoxLabel>
+                  <CheckBoxSubLabel>20 114 ₽</CheckBoxSubLabel>
+                </CheckboxItem>
+              </SidebarItem>
+            </SidebarItems>
+          </SidebarSection>
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={"rotate(-90deg)"}
+              />
+              <SidebarTitleText>Аэропорты</SidebarTitleText>
+            </SidebarTitle>
+          </SidebarSection>
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={"rotate(-90deg)"}
+              />
+              <SidebarTitleText>Аэропорт пересадки</SidebarTitleText>
+              <SidebarTitleSubText>43</SidebarTitleSubText>
+            </SidebarTitle>
+          </SidebarSection>
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={"rotate(-90deg)"}
+              />
+              <SidebarTitleText>Агенства</SidebarTitleText>
+              <SidebarTitleSubText>26</SidebarTitleSubText>
+            </SidebarTitle>
+          </SidebarSection>
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <SidebarTitleText color={"#00BDE4"} bottom={"1rem"}>
+                СБРОСИТЬ ВСЕ ФИЛЬТРЫ
+              </SidebarTitleText>
+            </SidebarTitle>
+          </SidebarSection>
         </SidebarWrapper>
       </React.Fragment>
     );
