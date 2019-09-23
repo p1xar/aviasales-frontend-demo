@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Inputs from "../Header/Inputs";
+import Tickets from "./Tickets/Tickets";
 import HeaderGradient from "../Header/common/HeaderGradient";
 import FormWrapper from "../Header/common/FormWrapper";
 import Logo from "../Header/common/Logo";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar/Sidebar";
+
 const FormWrapperCustom = styled(FormWrapper)`
   margin-top: 2.5rem;
   padding-bottom: 2rem;
@@ -20,13 +22,11 @@ const SearchWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
-const Tickets = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 44.5625rem;
-`;
 export default () => {
   return (
     <React.Fragment>
@@ -39,7 +39,7 @@ export default () => {
       <SearchContainer>
         <SearchWrapper>
           <Sidebar />
-          <Tickets></Tickets>
+          <Tickets />
         </SearchWrapper>
       </SearchContainer>
     </React.Fragment>

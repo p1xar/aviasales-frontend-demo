@@ -8,10 +8,11 @@ import planeicon from "./planeicon.svg";
 
 const SidebarWrapper = styled.div`
   width: 18.75rem;
+  height: 100%;
   background: lightgrey;
   border-radius: 0.25rem;
   background: #fff;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -27,6 +28,7 @@ const SidebarTitle = styled.div`
   display: flex;
   align-items: center;
   height: 3.25rem;
+  cursor: pointer;
 `;
 
 const SidebarTitleText = styled.a`
@@ -52,6 +54,7 @@ const Clear = styled.img`
   height: 1rem;
   margin-left: auto;
   display: ${props => props.display || "block"};
+  cursor: pointer;
 `;
 
 const SidebarItems = styled(SidebarSection)`
