@@ -17,12 +17,13 @@ const SidebarSection = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-  margin-top: 1.3rem;
+  margin-bottom: ${props => props.bottom || "initial"};
 `;
 
 const SidebarTitle = styled.div`
   display: flex;
   align-items: center;
+  height: 3.25rem;
 `;
 
 const SidebarTitleText = styled.a`
@@ -96,7 +97,7 @@ const Hr = styled.hr`
   background-color: #dddddd;
   border: 0;
   height: 0.0625rem;
-  margin-top: 1rem;
+  margin: 0rem;
 `;
 
 const RouteWrapper = styled.div`
@@ -145,7 +146,6 @@ const SidebarTitleSubText = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 0.75rem;
-  line-height: 1.125rem;
   color: #a0b0b9;
   margin-left: 0.5rem;
 `;
@@ -154,7 +154,6 @@ const SubTitle = styled.p`
   font-style: normal;
   font-weight: bold;
   font-size: 0.75rem;
-  line-height: 1.125rem;
   color: #323333;
 `;
 
@@ -162,10 +161,10 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      transfer: true,
-      timeFlight: true,
-      flightDuration: true,
-      aviacompanies: true
+      transfer: false,
+      timeFlight: false,
+      flightDuration: false,
+      aviacompanies: false
     };
     this.handleTransferChange = this.handleTransferChange.bind(this);
     this.handleTimeFlightChange = this.handleTimeFlightChange.bind(this);
@@ -200,7 +199,7 @@ class Sidebar extends React.Component {
     return (
       <React.Fragment>
         <SidebarWrapper>
-          <SidebarSection>
+          <SidebarSection bottom={this.state.transfer ? "1rem" : "0rem"}>
             <SidebarTitle>
               <Triangle
                 alt="Triangle"
@@ -237,7 +236,7 @@ class Sidebar extends React.Component {
             </SidebarItems>
           </SidebarSection>
           <Hr />
-          <SidebarSection>
+          <SidebarSection bottom={this.state.timeFlight ? "1rem" : "0rem"}>
             <SidebarTitle>
               <Triangle
                 alt="Triangle"
@@ -312,7 +311,7 @@ class Sidebar extends React.Component {
             </SidebarItems>
           </SidebarSection>
           <Hr />
-          <SidebarSection>
+          <SidebarSection bottom={this.state.flightDuration ? "1rem" : "0rem"}>
             <SidebarTitle>
               <Triangle
                 alt="Triangle"
@@ -370,7 +369,7 @@ class Sidebar extends React.Component {
             </SidebarItems>
           </SidebarSection>
           <Hr />
-          <SidebarSection>
+          <SidebarSection bottom={this.state.aviacompanies ? "1rem" : "0rem"}>
             <SidebarTitle>
               <Triangle
                 alt="Triangle"
@@ -514,7 +513,7 @@ class Sidebar extends React.Component {
           <Hr />
           <SidebarSection>
             <SidebarTitle>
-              <SidebarTitleText color={"#00BDE4"} bottom={"1rem"}>
+              <SidebarTitleText color={"#00BDE4"}>
                 СБРОСИТЬ ВСЕ ФИЛЬТРЫ
               </SidebarTitleText>
             </SidebarTitle>
