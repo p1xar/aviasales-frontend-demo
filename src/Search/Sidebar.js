@@ -11,6 +11,9 @@ const SidebarWrapper = styled.div`
   background: lightgrey;
   border-radius: 0.25rem;
   background: #fff;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SidebarSection = styled.div`
@@ -322,7 +325,7 @@ class Sidebar extends React.Component {
                 href="#"
                 onClick={this.handleTimeFlightDurationChange}
               >
-                Время вылета и прибытия
+                Время в пути
               </SidebarTitleText>
               <Clear
                 alt="Clear"
