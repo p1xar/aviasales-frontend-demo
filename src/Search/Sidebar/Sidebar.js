@@ -12,6 +12,7 @@ const SidebarWrapper = styled.div`
   background: lightgrey;
   border-radius: 0.25rem;
   background: #fff;
+  margin-bottom: 2rem;
   @media screen and (max-width: 1024px) {
     display: none;
   }
@@ -167,10 +168,10 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      transfer: false,
-      timeFlight: false,
-      flightDuration: false,
-      aviacompanies: false
+      transfer: true,
+      timeFlight: true,
+      flightDuration: true,
+      aviacompanies: true
     };
     this.handleTransferChange = this.handleTransferChange.bind(this);
     this.handleTimeFlightChange = this.handleTimeFlightChange.bind(this);
@@ -315,6 +316,28 @@ class Sidebar extends React.Component {
                 </SliderWrapper>
               </SidebarItem>
             </SidebarItems>
+          </SidebarSection>
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={"rotate(-90deg)"}
+              />
+              <SidebarTitleText>Багаж</SidebarTitleText>
+            </SidebarTitle>
+          </SidebarSection>
+          <Hr />
+          <SidebarSection>
+            <SidebarTitle>
+              <Triangle
+                alt="Triangle"
+                src={triangle}
+                rotate={"rotate(-90deg)"}
+              />
+              <SidebarTitleText>Длительность пересадки</SidebarTitleText>
+            </SidebarTitle>
           </SidebarSection>
           <Hr />
           <SidebarSection bottom={this.state.flightDuration ? "1rem" : "0rem"}>
