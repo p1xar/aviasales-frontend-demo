@@ -290,6 +290,19 @@ const Opener = styled.img`
   height: 0.3125rem;
 `;
 
+const ShowMoreButton = styled.button`
+  background: #00acde;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  height: 3.4375rem;
+  width: 44.5625rem;
+  border: 0;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+`;
+
 export default () => {
   return (
     <React.Fragment>
@@ -1047,6 +1060,7 @@ export default () => {
             <Opener alt="Ticket details" src={ticketOpener} />
           </TicketOpener>
         </Ticket>
+        <ShowMoreButton href="#">Показать еще 10 билетов!</ShowMoreButton>
       </TicketsWrapper>
     </React.Fragment>
   );
