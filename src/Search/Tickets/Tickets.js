@@ -22,6 +22,9 @@ const TicketsWrapper = styled.div`
   @media screen and (min-width: 320px) and (max-width: 1024px) {
     margin: 0 auto;
   }
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Ticket = styled.div`
@@ -83,6 +86,7 @@ const TabCaption = styled.div`
   color: ${props => props.color || "#9AB0B9"};
   font-size: 0.625rem;
   line-height: 0.9375rem;
+  text-align: center;
 `;
 
 const BuyButton = styled.button`
@@ -94,6 +98,9 @@ const BuyButton = styled.button`
   border: 0;
   cursor: pointer;
   margin-top: ${props => props.top || "initial"};
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    width: 9.125rem;
+  }
 `;
 
 const BuyButtonProposal = styled.p`
@@ -145,6 +152,9 @@ const CompanyInfo = styled.div`
   align-items: center;
   width: 30rem;
   height: 2.25rem;
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const CompanyLogo = styled.img`
@@ -194,6 +204,9 @@ const FromCity = styled.p`
   line-height: 0rem;
   margin-top: 0.1rem;
   color: #9ca5a8;
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    font-size: 0.6rem;
+  }
 `;
 
 const FromDate = styled(FromCity)`
@@ -207,6 +220,9 @@ const TimeSegment = styled.p`
   font-size: 1.75rem;
   color: #323333;
   line-height: 0rem;
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const PinIcon = styled.img`
@@ -220,6 +236,10 @@ const RouteVisualWrapper = styled.div`
   flex-direction: column;
   width: 14.1875rem;
   margin: 0 2rem;
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    width: 11.188rem;
+    margin: 0 1.5rem;
+  }
 `;
 
 const TotalTimeWrapper = styled.div`
@@ -242,6 +262,9 @@ const DotIcon = styled.img`
 const PathLine = styled.img`
   width: 12.8125rem;
   height: 0.0625rem;
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    width: 9.8125rem;
+  }
 `;
 
 const TotalTimeTitle = styled.p`
@@ -301,6 +324,9 @@ const ShowMoreButton = styled.button`
   border: 0;
   margin-bottom: 2.5rem;
   cursor: pointer;
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    width: 30.5625rem;
+  }
 `;
 
 export default () => {
