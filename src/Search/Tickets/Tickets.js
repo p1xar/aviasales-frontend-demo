@@ -16,13 +16,18 @@ import planeLands from "./svg/planeLands.svg";
 import dot from "./svg/dot.svg";
 import path from "./svg/path.svg";
 
+const data = {
+  firstTicket: {
+    ticketPrice: "7 712"
+  }
+};
 const TicketsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media screen and (min-width: 320px) and (max-width: 1024px) {
     margin: 0 auto;
   }
-  @media screen and (min-width: 320px) and (max-width: 768px) {
+  @media screen and (min-width: 320px) and (max-width: 1024px) {
     align-items: center;
   }
 `;
@@ -344,7 +349,7 @@ export default () => {
               </SingleTab>
             </TabsWrapper>
             <BuyButton>
-              Купить <br /> за 7 712 ₽
+              Купить <br /> за {data.firstTicket.ticketPrice} ₽
             </BuyButton>
             <BuyButtonProposal>на Clickavia</BuyButtonProposal>
           </BuySection>

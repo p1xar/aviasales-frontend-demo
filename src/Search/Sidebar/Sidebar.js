@@ -13,7 +13,7 @@ const SidebarWrapper = styled.div`
   border-radius: 0.25rem;
   background: #fff;
   margin-bottom: 2rem;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1050px) {
     display: none;
   }
 `;

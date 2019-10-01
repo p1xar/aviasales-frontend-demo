@@ -22,8 +22,9 @@ const SearchWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1050px) {
     width: 100%;
+    justify-content: center;
   }
 `;
 
