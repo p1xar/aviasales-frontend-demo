@@ -28,21 +28,53 @@ const SearchWrapper = styled.div`
   }
 `;
 
-export default () => {
-  return (
-    <React.Fragment>
-      <HeaderGradient>
-        <Logo />
-        <FormWrapperCustom>
-          <Inputs />
-        </FormWrapperCustom>
-      </HeaderGradient>
-      <SearchContainer>
-        <SearchWrapper>
-          <Sidebar />
-          <Tickets />
-        </SearchWrapper>
-      </SearchContainer>
-    </React.Fragment>
-  );
-};
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        ticketPrice: "7 712",
+        from: {
+          DepartureTime: "00:05",
+          DepartureCity: "Москва",
+          DepartureDate: "24 фев 2018, Cб",
+          ArrivalTime: "03:05",
+          ArrivalCity: "Барселона",
+          ArrivalDate: "24 фев 2018, Cб",
+          TimeDuration: "5 ч",
+          DepartureAirport: "VKO",
+          ArrivalAirport: "BCN"
+        },
+        to: {
+          DepartureTime: "10:35",
+          DepartureCity: "Барселона",
+          DepartureDate: "3 мар 2018, Cб",
+          ArrivalTime: "17:10",
+          ArrivalCity: "Москва",
+          ArrivalDate: "3 мар 2018, Cб",
+          TimeDuration: "4 ч 35 м",
+          DepartureAirport: "BCN",
+          ArrivalAirport: "SVO"
+        }
+      }
+    };
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <HeaderGradient>
+          <Logo />
+          <FormWrapperCustom>
+            <Inputs />
+          </FormWrapperCustom>
+        </HeaderGradient>
+        <SearchContainer>
+          <SearchWrapper>
+            <Sidebar />
+            <Tickets ticketPrice={this.state.data} />
+          </SearchWrapper>
+        </SearchContainer>
+      </React.Fragment>
+    );
+  }
+}

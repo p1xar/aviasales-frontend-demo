@@ -1,13 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import firstTypeLuggage from "./svg/firstTypeLuggage.svg";
-import secondTypeLuggage from "./svg/secondTypeLuggage.svg";
-import thirdTypeLuggage from "./svg/thirdTypeLuggage.svg";
-import fourthTypeLuggage from "./svg/fourthTypeLuggage.svg";
-import russiaAirlines from "./svg/russiaAirlines.svg";
-import nordwingAirlines from "./svg/nordwingAirlines.svg";
-import redWingsAirlines from "./svg/redWingsAirlines.svg";
-import flyAirlines from "./svg/flyAirlines.svg";
+import { TicketData } from "./data";
 import shareIcon from "./svg/shareIcon.svg";
 import ticketOpener from "./svg/ticketOpener.svg";
 import pinIcon from "./svg/pinIcon.svg";
@@ -16,11 +9,6 @@ import planeLands from "./svg/planeLands.svg";
 import dot from "./svg/dot.svg";
 import path from "./svg/path.svg";
 
-const data = {
-  firstTicket: {
-    ticketPrice: "7 712"
-  }
-};
 const TicketsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -89,7 +77,7 @@ const TabCaption = styled.div`
   font-style: normal;
   font-weight: ${props => props.weight || "normal"};
   color: ${props => props.color || "#9AB0B9"};
-  font-size: 0.625rem;
+  font-size: 0.6rem;
   line-height: 0.9375rem;
   text-align: center;
 `;
@@ -144,6 +132,7 @@ const MoreOffers = styled(OfferAgent)`
   font-weight: 500;
   margin-top: 0.5rem;
 `;
+
 const InfoSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -334,765 +323,165 @@ const ShowMoreButton = styled.button`
   }
 `;
 
-export default () => {
-  return (
-    <React.Fragment>
-      <TicketsWrapper>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper>
-              <SingleTab>
-                <Icon
-                  alt="Carry on 5 kg. Luggage 15 kg"
-                  src={firstTypeLuggage}
-                />
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton>
-              Купить <br /> за {data.firstTicket.ticketPrice} ₽
-            </BuyButton>
-            <BuyButtonProposal>на Clickavia</BuyButtonProposal>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Russia Airlines" src={russiaAirlines} />
-              <FlightType>Чартер</FlightType>
-              <ShareIcon alt="Share ticket" src={shareIcon} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>00:05</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 5 ч</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>03:05</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>10:35</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 35 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:10</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper>
-              <SingleTab>
-                <Icon alt="Carry on 5 kg. No luggage" src={secondTypeLuggage} />
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton>
-              Купить <br /> за 8 029 ₽
-            </BuyButton>
-            <BuyButtonProposal>на Билетик Аэро</BuyButtonProposal>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Russia Airlines" src={nordwingAirlines} />
-              <ShareIcon alt="Share ticket" src={shareIcon} left={"auto"} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>00:15</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4 ч 55 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>03:10</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>10:45</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 30 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:15</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper justify={"space-between"}>
-              <SingleTabPassive>
-                <Icon alt="Carry on 5 kg. No luggage" src={thirdTypeLuggage} />
-                <TabCaption>Нет багажа</TabCaption>
-              </SingleTabPassive>
-              <SingleTab>
-                <Icon alt="Carry on 5 kg. No luggage" src={fourthTypeLuggage} />
-                <TabCaption weight={"500"} color={"#66D295"}>
-                  - 136 ₽
-                </TabCaption>
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton top={"1rem"}>
-              Купить <br /> за 8 164 ₽
-            </BuyButton>
-            <BuyButtonProposal>на Aviakassa</BuyButtonProposal>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Russia Airlines" src={nordwingAirlines} />
-              <FlightType>Чартер</FlightType>
-              <ShareIcon alt="Share ticket" src={shareIcon} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>00:15</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4 ч 55 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>03:10</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>10:45</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 30 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:15</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper justify={"space-between"}>
-              <SingleTabPassive>
-                <Icon alt="Carry on 5 kg. No luggage" src={thirdTypeLuggage} />
-                <TabCaption>Нет багажа</TabCaption>
-              </SingleTabPassive>
-              <SingleTab>
-                <Icon alt="Carry on 5 kg. No luggage" src={fourthTypeLuggage} />
-                <TabCaption weight={"500"} color={"#66D295"}>
-                  - 267 ₽
-                </TabCaption>
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton top={"1rem"}>
-              Купить <br /> за 8 240 ₽
-            </BuyButton>
-            <BuyButtonProposal>на Билетик Аэро</BuyButtonProposal>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Red Wings" src={redWingsAirlines} />
-              <FlightType>Чартер</FlightType>
-              <ShareIcon alt="Share ticket" src={shareIcon} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>07:00</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4 ч 30 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>09:30</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>11:00</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 10 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:10</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper>
-              <SingleTab>
-                <Icon
-                  alt="Carry on 5 kg. Luggage 15 kg"
-                  src={firstTypeLuggage}
-                />
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton>
-              Купить <br /> за 9 108 ₽
-            </BuyButton>
-            <BuyButtonProposal>на Clickavia</BuyButtonProposal>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Russia Airlines" src={redWingsAirlines} />
-              <FlightType>Чартер</FlightType>
-              <ShareIcon alt="Share ticket" src={shareIcon} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>00:05</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 5 ч</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>03:05</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>11:00</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 10 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:10</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper>
-              <SingleTab>
-                <Icon
-                  alt="Carry on 5 kg. Luggage 15 kg"
-                  src={secondTypeLuggage}
-                />
-                <TabCaption color={"#FF654E"}>Осталось 4 билета</TabCaption>
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton>
-              Купить <br /> за 9 269 ₽
-            </BuyButton>
-            <BuyButtonProposal>на Biletix</BuyButtonProposal>
-            <OtherOffersWrapper>
-              <OfferRow>
-                <OfferAgent href="#">Svyaznoy Travel</OfferAgent>
-                <OfferPrice href="#">9 275 ₽</OfferPrice>
-              </OfferRow>
-              <OfferRow>
-                <OfferAgent href="#">Билетик Аэро</OfferAgent>
-                <OfferPrice href="#">9 587 ₽</OfferPrice>
-              </OfferRow>
-            </OtherOffersWrapper>
-            <MoreOffers href="#">+ Еще 4 предложения</MoreOffers>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Russia Airlines" src={flyAirlines} />
-              <FlightType>Чартер</FlightType>
-              <ShareIcon alt="Share ticket" src={shareIcon} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>07:30</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4 ч 20м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>09:50</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>11:20</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 15 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:35</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper>
-              <SingleTab>
-                <Icon alt="Carry on 5 kg. No luggage" src={secondTypeLuggage} />
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton>
-              Купить <br /> за 8 029 ₽
-            </BuyButton>
-            <BuyButtonProposal>на Билетик Аэро</BuyButtonProposal>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Russia Airlines" src={nordwingAirlines} />
-              <ShareIcon alt="Share ticket" src={shareIcon} left={"auto"} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>00:15</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4 ч 55 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>03:10</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>10:45</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 30 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:15</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <Ticket>
-          <BuySection>
-            <TabsWrapper>
-              <SingleTab>
-                <Icon alt="Carry on 5 kg. No luggage" src={firstTypeLuggage} />
-              </SingleTab>
-            </TabsWrapper>
-            <BuyButton>
-              Купить <br /> за 9 485 ₽
-            </BuyButton>
-            <BuyButtonProposal>на Clickavia</BuyButtonProposal>
-          </BuySection>
-          <InfoSection>
-            <CompanyInfo>
-              <CompanyLogo alt="Russia Airlines" src={nordwingAirlines} />
-              <FlightType>Чартер</FlightType>
-              <ShareIcon alt="Share ticket" src={shareIcon} />
-            </CompanyInfo>
-            <FromInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>00:05</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>24 фев 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 5ч</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Vko</FromCaption>
-                  <ToCaption>Bcn</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>03:05</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Барселона</ToCity>
-                <ToDate>24 фев 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </FromInfo>
-            <Hr />
-            <ToInfo>
-              <SegmentRouteTimeWrapper>
-                <TimeWrapper>
-                  <PinIcon alt="Pin icon" src={pinIcon} />
-                  <TimeSegment>11:20</TimeSegment>
-                </TimeWrapper>
-                <FromCity>Москва</FromCity>
-                <FromDate>3 марта 2018, Сб</FromDate>
-              </SegmentRouteTimeWrapper>
-              <RouteVisualWrapper>
-                <TotalTimeWrapper>
-                  <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
-                  <TotalTimeTitle>Всего: 4ч 15 м</TotalTimeTitle>
-                  <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
-                </TotalTimeWrapper>
-                <PathTimeWrapper>
-                  <DotIcon alt="Dot picture" src={dot} />
-                  <PathLine alt="Path picture" src={path} />
-                  <DotIcon alt="Dot picture" src={dot} />
-                </PathTimeWrapper>
-                <CaptionTimeWrapper>
-                  <FromCaption>Bcn</FromCaption>
-                  <ToCaption>Vko</ToCaption>
-                </CaptionTimeWrapper>
-              </RouteVisualWrapper>
-              <SegmentRouteTimeWrapper align={"flex-end"}>
-                <TimeWrapper>
-                  <TimeSegment>17:15</TimeSegment>
-                </TimeWrapper>
-                <ToCity>Москва</ToCity>
-                <ToDate>3 марта 2018, Сб</ToDate>
-              </SegmentRouteTimeWrapper>
-            </ToInfo>
-          </InfoSection>
-          <TicketOpener>
-            <Opener alt="Ticket details" src={ticketOpener} />
-          </TicketOpener>
-        </Ticket>
-        <ShowMoreButton href="#">Показать еще 10 билетов!</ShowMoreButton>
-      </TicketsWrapper>
-    </React.Fragment>
-  );
-};
+const TicketWrapper = ({
+  departureTime,
+  departureCity,
+  departureDate,
+  arrivalTime,
+  arrivalCity,
+  arrivalDate,
+  timeDuration,
+  departureAirport,
+  arrivalAirport,
+  luggageType,
+  luggageTypeAlt,
+  logo,
+  logoAlt,
+  company,
+  tabs,
+  charter,
+  offers,
+  departure,
+  arrival,
+  ticketPrice
+}) => (
+  <Ticket>
+    <BuySection>
+      {tabs.length > 1 ? (
+        <TabsWrapper justify={"space-between"}>
+          <SingleTabPassive>
+            <Icon alt={tabs[0].luggageTypeAlt} src={tabs[0].luggageType} />
+            <TabCaption>{tabs[0].caption}</TabCaption>
+          </SingleTabPassive>
+          <SingleTab>
+            <Icon alt={tabs[1].luggageTypeAlt} src={tabs[1].luggageType} />
+            <TabCaption weight={"500"} color={"#66D295"}>
+              {tabs[1].caption}
+            </TabCaption>
+          </SingleTab>
+        </TabsWrapper>
+      ) : (
+        <TabsWrapper>
+          <SingleTab>
+            <Icon alt={tabs[0].luggageTypeAlt} src={tabs[0].luggageType} />
+            <TabCaption color={"#FF654E"}>{tabs[0].caption}</TabCaption>
+          </SingleTab>
+        </TabsWrapper>
+      )}
+      <BuyButton top={tabs.length > 1 ? "1rem" : "initial"}>
+        Купить <br /> за {ticketPrice} ₽
+      </BuyButton>
+      <BuyButtonProposal>на {company}</BuyButtonProposal>
+      {offers.length > 0 ? (
+        <OtherOffersWrapper>
+          {offers.map(offers => (
+            <OfferRow>
+              <OfferAgent>{offers.offerAgent}</OfferAgent>
+              <OfferPrice>{offers.offerPrice} ₽</OfferPrice>
+            </OfferRow>
+          ))}
+        </OtherOffersWrapper>
+      ) : null}
+    </BuySection>
+    <InfoSection>
+      <CompanyInfo>
+        {logo.map(logo => (
+          <CompanyLogo alt={logoAlt} src={logo} />
+        ))}
+        {charter ? (
+          <React.Fragment>
+            <FlightType>Чартер</FlightType>
+            <ShareIcon alt="Share ticket" src={shareIcon} />
+          </React.Fragment>
+        ) : (
+          <ShareIcon alt="Share ticket" src={shareIcon} left={"auto"} />
+        )}
+      </CompanyInfo>
+      <FromInfo>
+        <SegmentRouteTimeWrapper>
+          <TimeWrapper>
+            <PinIcon alt="Pin icon" src={pinIcon} />
+            <TimeSegment>{departure.departureTime}</TimeSegment>
+          </TimeWrapper>
+          <FromCity>{departure.departureCity}</FromCity>
+          <FromDate>{departure.departureDate}</FromDate>
+        </SegmentRouteTimeWrapper>
+        <RouteVisualWrapper>
+          <TotalTimeWrapper>
+            <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
+            <TotalTimeTitle>Всего: {departure.timeDuration}</TotalTimeTitle>
+            <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
+          </TotalTimeWrapper>
+          <PathTimeWrapper>
+            <DotIcon alt="Dot picture" src={dot} />
+            <PathLine alt="Path picture" src={path} />
+            <DotIcon alt="Dot picture" src={dot} />
+          </PathTimeWrapper>
+          <CaptionTimeWrapper>
+            <FromCaption>{departure.departureAirport}</FromCaption>
+            <ToCaption>{departure.arrivalAirport}</ToCaption>
+          </CaptionTimeWrapper>
+        </RouteVisualWrapper>
+        <SegmentRouteTimeWrapper align={"flex-end"}>
+          <TimeWrapper>
+            <TimeSegment>{departure.arrivalTime}</TimeSegment>
+          </TimeWrapper>
+          <ToCity>{departure.arrivalCity}</ToCity>
+          <ToDate>{departure.arrivalDate}</ToDate>
+        </SegmentRouteTimeWrapper>
+      </FromInfo>
+      <Hr />
+      <ToInfo>
+        <SegmentRouteTimeWrapper>
+          <TimeWrapper>
+            <PinIcon alt="Pin icon" src={pinIcon} />
+            <TimeSegment>{arrival.departureTime}</TimeSegment>
+          </TimeWrapper>
+          <FromCity>{arrival.departureCity}</FromCity>
+          <FromDate>{arrival.departureDate}</FromDate>
+        </SegmentRouteTimeWrapper>
+        <RouteVisualWrapper>
+          <TotalTimeWrapper>
+            <PlaneIcon alt="Plane takeoff" src={planeTakeoff} />
+            <TotalTimeTitle>Всего: {arrival.timeDuration}</TotalTimeTitle>
+            <PlaneIcon alt="Plane lands" src={planeLands}></PlaneIcon>
+          </TotalTimeWrapper>
+          <PathTimeWrapper>
+            <DotIcon alt="Dot picture" src={dot} />
+            <PathLine alt="Path picture" src={path} />
+            <DotIcon alt="Dot picture" src={dot} />
+          </PathTimeWrapper>
+          <CaptionTimeWrapper>
+            <FromCaption>{arrival.departureAirport}</FromCaption>
+            <ToCaption>{arrival.arrivalAirport}</ToCaption>
+          </CaptionTimeWrapper>
+        </RouteVisualWrapper>
+        <SegmentRouteTimeWrapper align={"flex-end"}>
+          <TimeWrapper>
+            <TimeSegment>{arrival.arrivalTime}</TimeSegment>
+          </TimeWrapper>
+          <ToCity>{arrival.arrivalCity}</ToCity>
+          <ToDate>{arrival.arrivalDate}</ToDate>
+        </SegmentRouteTimeWrapper>
+      </ToInfo>
+    </InfoSection>
+    <TicketOpener>
+      <Opener alt="Ticket details" src={ticketOpener} />
+    </TicketOpener>
+  </Ticket>
+);
+
+const TicketsMap = () => (
+  <TicketsWrapper>
+    {TicketData.map(data => (
+      <TicketWrapper {...data} />
+    ))}
+    <ShowMoreButton>Показать еще 10 билетов!</ShowMoreButton>
+  </TicketsWrapper>
+);
+
+function Tickets() {
+  return <TicketsMap />;
+}
+
+export default Tickets;
