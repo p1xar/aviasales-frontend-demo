@@ -35,7 +35,11 @@ const Ticket = styled.div`
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     width: 47rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 640px) {
+  @media screen and (min-width: 401px) and (max-width: 640px) {
+    width: 24rem;
+    height: 100%;
+  }
+  @media screen and (min-width: 320px) and (max-width: 400px) {
     width: 19rem;
     height: 100%;
   }
@@ -146,7 +150,6 @@ const InfoSection = styled.div`
   padding: 0 1rem;
   @media screen and (min-width: 320px) and (max-width: 640px) {
     padding: 0rem;
-    width: 100%;
   }
 `;
 
