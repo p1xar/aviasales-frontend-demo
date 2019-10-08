@@ -10,7 +10,8 @@ import flyAirlines from "./svg/flyAirlines.svg";
 export const TicketData = [
   {
     key: 0,
-    status: "cheapest",
+    status: "Самый дешевый 🤑",
+    statusColor: "#83D40B",
     ticketPrice: "7 712",
     tabs: [
       {
@@ -32,7 +33,8 @@ export const TicketData = [
       arrivalDate: "24 фев 2018, Cб",
       timeDuration: "5 ч",
       departureAirport: "VKO",
-      arrivalAirport: "BCN"
+      arrivalAirport: "BCN",
+      routeType: "Прямой"
     },
     arrival: {
       departureTime: "10:35",
@@ -43,12 +45,14 @@ export const TicketData = [
       arrivalDate: "3 мар 2018, Cб",
       timeDuration: "4 ч 35 м",
       departureAirport: "BCN",
-      arrivalAirport: "SVO"
+      arrivalAirport: "SVO",
+      routeType: "Прямой"
     }
   },
   {
     key: 1,
-    status: "fastest",
+    status: "Самый быстрый ⚡",
+    statusColor: "#AF7542",
     ticketPrice: "8 029",
     tabs: [
       {
@@ -70,7 +74,8 @@ export const TicketData = [
       arrivalDate: "24 фев 2018, Cб",
       timeDuration: "4 ч 55 м",
       departureAirport: "VKO",
-      arrivalAirport: "BCN"
+      arrivalAirport: "BCN",
+      routeType: "Прямой"
     },
     arrival: {
       departureTime: "10:45",
@@ -81,11 +86,14 @@ export const TicketData = [
       arrivalDate: "3 мар 2018, Cб",
       timeDuration: "4 ч 30 м",
       departureAirport: "BCN",
-      arrivalAirport: "SVO"
+      arrivalAirport: "SVO",
+      routeType: "CDG"
     }
   },
   {
     key: 2,
+    status: "Лучший билет 😍",
+    statusColor: "#C279D1",
     ticketPrice: "8 164",
     tabs: [
       {
@@ -113,7 +121,8 @@ export const TicketData = [
       arrivalDate: "24 фев 2018, Cб",
       timeDuration: "4 ч 55 м",
       departureAirport: "VKO",
-      arrivalAirport: "BCN"
+      arrivalAirport: "BCN",
+      routeType: "Прямой"
     },
     arrival: {
       departureTime: "10:45",
@@ -124,7 +133,8 @@ export const TicketData = [
       arrivalDate: "3 мар 2018, Cб",
       timeDuration: "4 ч 30 м",
       departureAirport: "BCN",
-      arrivalAirport: "SVO"
+      arrivalAirport: "SVO",
+      routeType: "Прямой"
     }
   },
   {
@@ -156,7 +166,8 @@ export const TicketData = [
       arrivalDate: "24 фев 2018, Cб",
       timeDuration: "4 ч 30 м",
       departureAirport: "VKO",
-      arrivalAirport: "BCN"
+      arrivalAirport: "BCN",
+      routeType: "Прямой"
     },
     arrival: {
       departureTime: "11:00",
@@ -167,7 +178,8 @@ export const TicketData = [
       arrivalDate: "3 мар 2018, Cб",
       timeDuration: "4 ч 10 м",
       departureAirport: "BCN",
-      arrivalAirport: "SVO"
+      arrivalAirport: "SVO",
+      routeType: "Прямой"
     }
   },
   {
@@ -194,7 +206,8 @@ export const TicketData = [
       arrivalDate: "24 фев 2018, Cб",
       timeDuration: "5 ч",
       departureAirport: "VKO",
-      arrivalAirport: "BCN"
+      arrivalAirport: "BCN",
+      routeType: "Прямой"
     },
     arrival: {
       departureTime: "11:00",
@@ -205,7 +218,8 @@ export const TicketData = [
       arrivalDate: "3 мар 2018, Cб",
       timeDuration: "4 ч 10 м",
       departureAirport: "BCN",
-      arrivalAirport: "SVO"
+      arrivalAirport: "SVO",
+      routeType: "Прямой"
     }
   },
   {
@@ -240,7 +254,8 @@ export const TicketData = [
       arrivalDate: "24 фев 2018, Cб",
       timeDuration: "4 ч 20 м",
       departureAirport: "VKO",
-      arrivalAirport: "BCN"
+      arrivalAirport: "BCN",
+      routeType: "Прямой"
     },
     arrival: {
       departureTime: "11:20",
@@ -251,7 +266,8 @@ export const TicketData = [
       arrivalDate: "3 мар 2018, Cб",
       timeDuration: "4 ч 15 м",
       departureAirport: "BCN",
-      arrivalAirport: "SVO"
+      arrivalAirport: "SVO",
+      routeType: "Прямой"
     }
   },
   {
@@ -277,7 +293,8 @@ export const TicketData = [
       arrivalDate: "24 фев 2018, Cб",
       timeDuration: "5 ч",
       departureAirport: "VKO",
-      arrivalAirport: "BCN"
+      arrivalAirport: "BCN",
+      routeType: "Прямой"
     },
     arrival: {
       departureTime: "11:20",
@@ -288,7 +305,8 @@ export const TicketData = [
       arrivalDate: "3 мар 2018, Cб",
       timeDuration: "4 ч 15 м",
       departureAirport: "BCN",
-      arrivalAirport: "SVO"
+      arrivalAirport: "SVO",
+      routeType: "Прямой"
     }
   }
 ];

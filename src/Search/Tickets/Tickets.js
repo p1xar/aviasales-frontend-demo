@@ -6,6 +6,8 @@ import ticketOpener from "./svg/ticketOpener.svg";
 import pinIcon from "./svg/pinIcon.svg";
 import planeTakeoff from "./svg/planeTakeoff.svg";
 import planeLands from "./svg/planeLands.svg";
+import smallPlaneIcon from "./svg/smallPlaneIcon.svg";
+import timeIcon from "./svg/timeIcon.svg";
 import dot from "./svg/dot.svg";
 import path from "./svg/path.svg";
 
@@ -27,14 +29,15 @@ const Ticket = styled.div`
   border-radius: 0.25rem;
   margin-bottom: 1.25rem;
   display: flex;
-  @media screen and (min-width: 320px) and (max-width: 640px) {
-    width: 20rem;
-  }
-  @media screen and (min-width: 640px) and (max-width: 768px) {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
     width: 38rem;
   }
-  @media screen and (min-width: 768) and (max-width: 1024px) {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     width: 47rem;
+  }
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    width: 19rem;
+    height: 100%;
   }
 `;
 
@@ -44,6 +47,9 @@ const BuySection = styled.div`
   align-items: center;
   width: 13.0625rem;
   border-right: 0.0625rem solid #ddd;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const TabsWrapper = styled.div`
@@ -91,7 +97,7 @@ const BuyButton = styled.button`
   border: 0;
   cursor: pointer;
   margin-top: ${props => props.top || "initial"};
-  @media screen and (min-width: 640px) and (max-width: 768px) {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
     width: 9.125rem;
   }
 `;
@@ -138,6 +144,10 @@ const InfoSection = styled.div`
   flex-direction: column;
   width: 32rem;
   padding: 0 1rem;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    padding: 0rem;
+    width: 100%;
+  }
 `;
 
 const CompanyInfo = styled.div`
@@ -154,6 +164,9 @@ const CompanyInfo = styled.div`
 const CompanyLogo = styled.img`
   width: 6.1875rem;
   height: 2.25rem;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    padding-right: 0.375rem;
+  }
 `;
 
 const FlightType = styled.p`
@@ -167,18 +180,38 @@ const FlightType = styled.p`
   padding: 0.25rem 0.6875rem;
   margin-left: auto;
   margin-right: 0.8125rem;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const ShareIcon = styled.img`
   width: 1.0625rem;
   height: 0.875rem;
   margin-left: ${props => props.left || "initial"};
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const FromInfo = styled.div`
   display: flex;
   align-items: center;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
 `;
+
+const FromInfoAlt = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.375rem;
+  @media screen and (min-width: 641px) {
+    display: none;
+  }
+`;
+
+const ToInfoAlt = styled(FromInfoAlt)``;
 
 const SegmentRouteTimeWrapper = styled.div`
   display: flex;
@@ -198,8 +231,11 @@ const FromCity = styled.p`
   line-height: 0rem;
   margin-top: 0.1rem;
   color: #9ca5a8;
-  @media screen and (min-width: 640px) and (max-width: 768px) {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
     font-size: 0.6rem;
+  }
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
   }
 `;
 
@@ -214,15 +250,35 @@ const TimeSegment = styled.p`
   font-size: 1.75rem;
   color: #323333;
   line-height: 0rem;
-  @media screen and (min-width: 640px) and (max-width: 768px) {
+  margin-left: ${props => props.left};
+  margin-right: ${props => props.right};
+  @media screen and (min-width: 641px) and (max-width: 768px) {
     font-size: 1.5rem;
   }
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: #4a4a4a;
+  }
+`;
+
+const RouteType = styled(TimeSegment)`
+  min-width: 4rem;
+`;
+
+const Dash = styled(TimeSegment)`
+  margin: 0 0.3rem;
 `;
 
 const PinIcon = styled.img`
   width: 1.25rem;
   height: 1.25rem;
   margin-right: 0.5rem;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const RouteVisualWrapper = styled.div`
@@ -230,18 +286,47 @@ const RouteVisualWrapper = styled.div`
   flex-direction: column;
   width: 14.1875rem;
   margin: 0 2rem;
-  @media screen and (min-width: 640px) and (max-width: 768px) {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
     width: 11.188rem;
     margin: 0 1.5rem;
+  }
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
+`;
+
+const BuyPrice = styled.p`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #ff9241;
+  font-weight: bold;
+  padding-left: 0.375rem;
+  margin-right: ${props => props.right || "initial"};
+  @media screen and (min-width: 641px) {
+    display: none;
   }
 `;
 
 const TotalTimeWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    align-items: center;
+  }
 `;
 
-const PlaneIcon = styled.img``;
+const PlaneIcon = styled.img`
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 0.5rem;
+    transform: ${props => props.rotate};
+  }
+`;
+
+const TimeIcon = styled(PlaneIcon)``;
 
 const PathTimeWrapper = styled.div`
   display: flex;
@@ -256,7 +341,7 @@ const DotIcon = styled.img`
 const PathLine = styled.img`
   width: 12.8125rem;
   height: 0.0625rem;
-  @media screen and (min-width: 640px) and (max-width: 768px) {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
     width: 9.8125rem;
   }
 `;
@@ -267,6 +352,13 @@ const TotalTimeTitle = styled.p`
   font-size: 0.75rem;
   line-height: 1.125rem;
   color: #a0b0b9;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: #4a4a4a;
+  }
 `;
 
 const CaptionTimeWrapper = styled(TotalTimeWrapper)``;
@@ -289,6 +381,9 @@ const Hr = styled.hr`
   border: 1px dashed #dddddd;
   width: 100%;
   margin-top: 0.75rem;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const ToInfo = styled(FromInfo)``;
@@ -300,6 +395,9 @@ const TicketOpener = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const Opener = styled.img`
@@ -313,17 +411,42 @@ const ShowMoreButton = styled.button`
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  height: 3.4375rem;
+  padding: 1rem 0rem;
   width: 44.5625rem;
   border: 0;
   margin-bottom: 2.5rem;
   cursor: pointer;
-  @media screen and (min-width: 640px) and (max-width: 768px) {
+  @media screen and (min-width: 641px) and (max-width: 768px) {
     width: 30.5625rem;
+  }
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    width: 95%;
+    margin-bottom: 1rem;
   }
 `;
 
+const TicketStatus = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem 0.25rem 0rem 0rem;
+  background: ${props => props.bg || "#fff"};
+  height: 2rem;
+  @media screen and (min-width: 641px) {
+    display: none;
+  }
+`;
+
+const TicketStatusTitle = styled.p`
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  color: #fff;
+  margin-left: 0.375rem;
+`;
+
 const TicketWrapper = ({
+  key,
   departureTime,
   departureCity,
   departureDate,
@@ -343,7 +466,10 @@ const TicketWrapper = ({
   offers,
   departure,
   arrival,
-  ticketPrice
+  ticketPrice,
+  status,
+  statusColor,
+  routeType
 }) => (
   <Ticket>
     <BuySection>
@@ -373,18 +499,27 @@ const TicketWrapper = ({
       </BuyButton>
       <BuyButtonProposal>на {company}</BuyButtonProposal>
       {offers.length > 0 ? (
-        <OtherOffersWrapper>
-          {offers.map(offers => (
-            <OfferRow>
-              <OfferAgent>{offers.offerAgent}</OfferAgent>
-              <OfferPrice>{offers.offerPrice} ₽</OfferPrice>
-            </OfferRow>
-          ))}
-        </OtherOffersWrapper>
+        <React.Fragment>
+          <OtherOffersWrapper>
+            {offers.map(offers => (
+              <OfferRow>
+                <OfferAgent>{offers.offerAgent}</OfferAgent>
+                <OfferPrice>{offers.offerPrice} ₽</OfferPrice>
+              </OfferRow>
+            ))}
+          </OtherOffersWrapper>
+          <MoreOffers>+ Еще 4 предложения</MoreOffers>
+        </React.Fragment>
       ) : null}
     </BuySection>
     <InfoSection>
+      {status !== undefined ? (
+        <TicketStatus bg={statusColor}>
+          <TicketStatusTitle>{status}</TicketStatusTitle>
+        </TicketStatus>
+      ) : null}
       <CompanyInfo>
+        <BuyPrice right="auto">{ticketPrice} ₽</BuyPrice>
         {logo.map(logo => (
           <CompanyLogo alt={logoAlt} src={logo} />
         ))}
@@ -394,7 +529,9 @@ const TicketWrapper = ({
             <ShareIcon alt="Share ticket" src={shareIcon} />
           </React.Fragment>
         ) : (
-          <ShareIcon alt="Share ticket" src={shareIcon} left={"auto"} />
+          <React.Fragment>
+            <ShareIcon alt="Share ticket" src={shareIcon} left={"auto"} />
+          </React.Fragment>
         )}
       </CompanyInfo>
       <FromInfo>
@@ -464,6 +601,37 @@ const TicketWrapper = ({
           <ToDate>{arrival.arrivalDate}</ToDate>
         </SegmentRouteTimeWrapper>
       </ToInfo>
+      {/* When screen is smaller than 640px */}
+      <FromInfoAlt>
+        <TimeWrapper>
+          <PlaneIcon alt="Small plane icon" src={smallPlaneIcon} />
+          <TimeSegment>{departure.departureTime}</TimeSegment>
+          <Dash>—</Dash>
+          <TimeSegment>{departure.arrivalTime}</TimeSegment>
+        </TimeWrapper>
+        <TotalTimeWrapper>
+          <TimeIcon alt="Time icon" src={timeIcon} />
+          <TotalTimeTitle>{departure.timeDuration}</TotalTimeTitle>
+        </TotalTimeWrapper>
+        <RouteType>{departure.routeType}</RouteType>
+      </FromInfoAlt>
+      <ToInfoAlt>
+        <TimeWrapper>
+          <PlaneIcon
+            alt="Small plane icon"
+            src={smallPlaneIcon}
+            rotate={"rotate(180deg)"}
+          />
+          <TimeSegment>{arrival.departureTime}</TimeSegment>
+          <Dash>—</Dash>
+          <TimeSegment>{arrival.arrivalTime}</TimeSegment>
+        </TimeWrapper>
+        <TotalTimeWrapper>
+          <TimeIcon alt="Time icon" src={timeIcon} />
+          <TotalTimeTitle>{arrival.timeDuration}</TotalTimeTitle>
+        </TotalTimeWrapper>
+        <RouteType>{arrival.routeType}</RouteType>
+      </ToInfoAlt>
     </InfoSection>
     <TicketOpener>
       <Opener alt="Ticket details" src={ticketOpener} />
