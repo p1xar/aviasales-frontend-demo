@@ -6,7 +6,7 @@ import StyledWrapper from "./common/StyledWrapper";
 const CustomStyledWrapper = styled(StyledWrapper)`
   & .react-autosuggest__input {
     border-radius: initial;
-    @media screen and (min-width: 37.699rem) and (max-width: 70.999rem) {
+    @media screen and (min-width: 611px) and (max-width: 1136px) {
       border-radius: 0 0.3rem 0 0;
     }
   }

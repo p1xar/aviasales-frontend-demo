@@ -6,14 +6,14 @@ import { NavLink } from "react-router-dom";
 const Logo = styled.img`
   padding-left: 6.625rem;
   padding-top: 1.1875rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     padding-left: 0.5rem;
   }
 `;
 
 const LogoText = styled(NavLink)`
   display: none;
-  @media screen and (min-width: 48rem) {
+  @media screen and (min-width: 768px) {
     display: block;
     font-style: normal;
     font-weight: 300;
@@ -25,7 +25,7 @@ const LogoText = styled(NavLink)`
     color: #fff;
     text-decoration: none;
   }
-  @media screen and (min-width: 20.0625rem) and (max-width: 48rem) {
+  @media screen and (min-width: 321px) and (max-width: 768px) {
     display: block;
     font-style: normal;
     font-weight: 300;

@@ -14,7 +14,7 @@ const HomeWrapperCustom = styled(HomeWrapper)`
   margin-top: 2.5rem;
   height: 17.5625rem;
   margin-bottom: 3rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     height: 23.1rem;
   }
 `;
@@ -25,7 +25,7 @@ const MainWrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 65rem;
-  @media screen and (max-width: 65.625rem) {
+  @media screen and (max-width: 1050px) {
     width: 100%;
     justify-content: center;
   }
@@ -33,7 +33,7 @@ const MainWrapper = styled.div`
 
 const AppScreenshotContainer = styled.div`
   position: relative;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     order: 2;
   }
 `;
@@ -43,22 +43,22 @@ const AppScreenshot = styled.img`
   position: relative;
   bottom: 0.7rem;
   margin-right: 5rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     margin-right: 0rem;
     width: 10.125rem;
     height: 13.3125rem;
     position: absolute;
     order: 2;
   }
-  @media screen and (min-width: 20rem) and (max-width: 31.125rem) {
+  @media screen and (min-width: 320px) and (max-width: 498px) {
     bottom: 0.75rem;
     right: 0.5rem;
   }
-  @media screen and (min-width: 31.1875rem) and (max-width: 48rem) {
+  @media screen and (min-width: 499px) and (max-width: 768px) {
     bottom: -11.55rem;
     right: 15rem;
   }
-  @media screen and (min-width: 48rem) and (max-width: 62.5rem) {
+  @media screen and (min-width: 769px) and (max-width: 1000px) {
     margin-right: 1rem;
   }
 `;
@@ -75,13 +75,13 @@ const AppDescriptionTitle = styled.p`
   line-height: 2.5rem;
   color: #fff;
   margin-bottom: 0.5rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     order: 0;
     text-align: center;
     font-size: 1.5rem;
     line-height: 1.75rem;
   }
-  @media screen and (min-width: 48.01rem) and (max-width: 62.5rem) {
+  @media screen and (min-width: 769px) and (max-width: 1000px) {
     font-size: 1.5rem;
   }
 `;
@@ -89,7 +89,7 @@ const AppDescriptionTitle = styled.p`
 const AppRatingWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     flex-direction: row-reverse;
     justify-content: center;
   }
@@ -98,7 +98,7 @@ const AppRatingWrapper = styled.div`
 const AppRating = styled.div`
   display: flex;
   align-items: center;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     order: 1;
   }
 `;
@@ -123,14 +123,14 @@ const AppPlatformsWrapper = styled.div`
   display: flex;
   margin-top: 2.6875rem;
   min-width: 9rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
     margin-left: auto;
     margin-right: 1rem;
     margin-bottom: 3.5rem;
   }
-  @media screen and (min-width: 25rem) and (max-width: 48rem) {
+  @media screen and (min-width: 400px) and (max-width: 768px) {
     margin-right: 3rem;
   }
 `;
@@ -144,7 +144,7 @@ const AppPlatfromColumn = styled.div`
   &:not(:first-child) {
     margin-left: 1.25rem;
   }
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     &:not(:last-child) {
       border-right: none;
       padding-right: 0rem;

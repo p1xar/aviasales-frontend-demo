@@ -44,7 +44,7 @@ const SearchButton = styled(Link)`
   font-size: 1.75rem;
   line-height: 2.0625rem;
   text-decoration: none;
-  @media screen and (max-width: 70.999rem) {
+  @media screen and (max-width: 1136px) {
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
@@ -61,17 +61,18 @@ const PlaneIcon = styled(Icon)`
 const BreakColumn = styled.div`
   display: none;
   flex-basis: 100%;
-  @media screen and (max-width: 37.599rem) {
+  @media screen and (max-width: 610px) {
     display: block;
   }
-  @media screen and (min-width: 37.699rem) and (max-width: 70.999rem) {
+  @media screen and (min-width: 611px) and (max-width: 1136px) {
     display: none;
     &:nth-child(4),
     &:nth-child(9) {
       display: block;
     }
   }
-  @media screen and (min-width: 71rem) {
+
+  @media screen and (min-width: 1136px) {
     &:nth-child(9) {
       display: block;
     }

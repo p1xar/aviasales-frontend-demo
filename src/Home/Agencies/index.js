@@ -20,7 +20,7 @@ const Title = styled.p`
   line-height: 2.5rem;
   margin-top: 6.0625rem;
   text-align: center;
-  @media screen and (max-width: 20rem) {
+  @media screen and (max-width: 320px) {
     display: none;
   }
 `;
@@ -31,7 +31,7 @@ const AgenciesWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: 20rem) {
+  @media screen and (max-width: 320px) {
     display: none;
   }
 `;
@@ -41,7 +41,7 @@ const Agency = styled.img`
     margin-right: 1.25rem;
   }
 
-  @media screen and (max-width: 51.4375rem) {
+  @media screen and (max-width: 823px) {
     &:not(:last-child),
     :last-child {
       margin-right: 2rem;
@@ -55,7 +55,7 @@ const Hr = styled.img`
   width: 100%;
   height: 0.4375rem;
   margin-top: 4.25rem;
-  @media screen and (max-width: 20rem) {
+  @media screen and (max-width: 320px) {
     display: none;
   }
 `;
@@ -68,10 +68,10 @@ const SubscriptionWrapper = styled.div`
   margin-top: 2.1875rem;
   margin-bottom: 1.5rem;
   max-width: 65rem;
-  @media screen and (max-width: 20rem) {
+  @media screen and (max-width: 320px) {
     display: none;
   }
-  @media screen and (min-width: 20rem) and (max-width: 48rem) {
+  @media screen and (min-width: 321px) and (max-width: 768px) {
     max-width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -84,12 +84,12 @@ const Column = styled.div`
   &:not(:last-child) {
     margin-right: 10.3125rem;
   }
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     &:not(:last-child) {
       margin-right: 0rem;
     }
   }
-  @media screen and (min-width: 48.00625rem) and (max-width: 67.75rem) {
+  @media screen and (min-width: 769px) and (max-width: 1084px) {
     &:not(:last-child) {
       margin-right: 2rem;
     }
@@ -102,7 +102,7 @@ const SubscriptionTitle = styled.p`
   font-size: 1rem;
   line-height: 1.25rem;
   color: #5c5c5c;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     text-align: center;
   }
 `;
@@ -112,7 +112,7 @@ const SubscriptionDesc = styled.p`
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.375rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     text-align: center;
   }
 `;
@@ -121,7 +121,7 @@ const CustomColumn = styled(Column)`
   flex-direction: row;
   align-self: flex-start;
   margin-top: 0.96rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
@@ -141,7 +141,7 @@ const SubscriptionForm = styled.div`
   margin-left: 1rem;
   display: flex;
   flex-direction: row;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     margin-top: 1.5rem;
   }
 `;
@@ -157,7 +157,7 @@ const EmailInput = styled.input`
   font-size: 1rem;
   line-height: 1.25rem;
   padding-left: 0.8125rem;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     width: 9.938rem;
   }
 `;
@@ -176,7 +176,7 @@ const Button = styled.a`
   border-radius: 0.125rem;
   color: #fff;
   text-decoration: none;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
   }

@@ -8,7 +8,7 @@ import list from "./list.svg";
 const HomeWrapperCustom = styled(HomeWrapper)`
   max-width: 65rem;
   margin-top: 1rem;
-  @media screen and (max-width: 65.625rem) {
+  @media screen and (max-width: 1050px) {
     max-width: 95%;
   }
 `;

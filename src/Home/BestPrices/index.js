@@ -25,11 +25,11 @@ const BestPricesWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media screen and (min-width: 20.01rem) and (max-width: 48rem) {
+  @media screen and (min-width: 321px) and (max-width: 768px) {
     flex-direction: column;
     flex-wrap: nowrap;
   }
-  @media screen and (min-width: 48.01rem) and (max-width: 71rem) {
+  @media screen and (min-width: 769px) and (max-width: 1136px) {
     justify-content: center;
   }
 `;
@@ -43,7 +43,7 @@ const BestPricesColumn = styled.div`
     padding-right: 2.125rem;
     margin-right: 2.125rem;
   }
-  @media screen and (max-width: 20rem) {
+  @media screen and (max-width: 320px) {
     justify-content: center;
     width: 100%;
     border-right: none;
@@ -59,7 +59,7 @@ const BestPricesColumn = styled.div`
       border-bottom: 0.1rem dashed #e8edf1;
     }
   }
-  @media screen and (min-width: 20.01rem) and (max-width: 48rem) {
+  @media screen and (min-width: 321px) and (max-width: 768px) {
     &:not(:last-child) {
       border-right: none;
       margin-right: 0rem;
@@ -69,12 +69,6 @@ const BestPricesColumn = styled.div`
       border-bottom: 0.1rem dashed #e8edf1;
     }
     max-width: 100%;
-  }
-  @media screen and (min-width: 48.01rem) and (max-width: 71rem) {
-    &:not(:last-child) {
-      padding-right: 1rem;
-      margin-right: 1rem;
-    }
   }
 `;
 

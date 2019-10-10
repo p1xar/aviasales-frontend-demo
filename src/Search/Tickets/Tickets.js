@@ -414,7 +414,7 @@ const ShowMoreButton = styled.button`
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  padding: 1rem 0rem;
+  padding: 1rem 0rem 1rem 0rem;
   width: 44.5625rem;
   border: 0;
   margin-bottom: 2.5rem;

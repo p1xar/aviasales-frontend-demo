@@ -11,7 +11,7 @@ export default styled.input`
     font-size: 16px;
     line-height: 20px;
   }
-  @media screen and (max-width: 70.999rem) {
+  @media screen and (max-width: 1136px) {
     margin-bottom: 0.125rem;
     width: 17.25rem;
   }

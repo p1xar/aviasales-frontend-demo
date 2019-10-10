@@ -7,7 +7,7 @@ const PassengersInput = styled(StyledInput)`
   border-radius: 0 0.3rem 0.3rem 0;
   padding-right: 2rem;
   cursor: pointer;
-  @media screen and (max-width: 70.999rem) {
+  @media screen and (max-width: 1135px) {
     border-radius: 0 0 0.3rem 0.3rem;
     padding-right: 0;
   }

@@ -19,7 +19,7 @@ export default styled.div`
       width: 17.25rem;
       border-radius: 0.3rem 0.3rem 0 0;
     }
-    @media screen and (min-width: 601px) and (max-width: 1120px) {
+    @media screen and (min-width: 611px) and (max-width: 1120px) {
       border-radius: 0.3rem 0 0 0;
     }
   }

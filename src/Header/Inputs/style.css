@@ -239,7 +239,7 @@
     font-size: 0.68rem;
   }
 }
-@media screen and (min-width: 603px) and (max-width: 1120px) {
+@media screen and (min-width: 611px) and (max-width: 1120px) {
   .DayPickerInput:nth-child(even) input {
     border-radius: 0 0 0 0.3rem;
   }

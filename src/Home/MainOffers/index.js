@@ -12,7 +12,7 @@ const CustomHomeWrapper = styled(HomeWrapper)`
 
 const MainWrapper = styled.div`
   width: 65rem;
-  @media screen and (max-width: 65.625rem) {
+  @media screen and (max-width: 1050px) {
     width: 100%;
   }
 `;
@@ -25,7 +25,7 @@ const MainOfferTitle = styled.p`
   text-align: left;
   color: #ffffff;
   align-self: flex-start;
-  @media screen and (max-width: 65.625rem) {
+  @media screen and (max-width: 1050px) {
     margin-left: 1rem;
   }
 `;
@@ -35,10 +35,10 @@ const MainOfferColumns = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  @media screen and (min-width: 20rem) and (max-width: 48rem) {
+  @media screen and (min-width: 320px) and (max-width: 768px) {
     flex-direction: column;
   }
-  @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+  @media screen and (min-width: 769px) and (max-width: 1050px) {
     justify-content: center;
   }
 `;
@@ -47,10 +47,10 @@ const Column = styled.div`
   width: 18.625rem;
   height: 16.875rem;
   background: #fff;
-  @media screen and (max-width: 48rem) {
+  @media screen and (max-width: 768px) {
     margin-top: 1rem;
   }
-  @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+  @media screen and (min-width: 769px) and (max-width: 1050px) {
     &:not(:last-child) {
       margin-right: 1rem;
     }
@@ -93,7 +93,7 @@ const ColumnItems = styled.div`
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
-  @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+  @media screen and (min-width: 769px) and (max-width: 1050px) {
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
@@ -132,7 +132,7 @@ const MainOfferDescription = styled.p`
   color: #242424;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+  @media screen and (min-width: 769px) and (max-width: 1050px) {
     font-size: 0.8rem;
   }
 `;
@@ -146,7 +146,7 @@ const MainOfferReadMore = styled.a`
   margin-top: 1.5rem;
   text-decoration: none;
   color: #d93533;
-  @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+  @media screen and (min-width: 769px) and (max-width: 1050px) {
     padding: 0.625rem 2rem;
   }
 `;
@@ -157,10 +157,10 @@ const MainOfferFooter = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  @media screen and (min-width: 48.01rem) and (max-width: 65.625rem) {
+  @media screen and (min-width: 769px) and (max-width: 1050px) {
     justify-content: space-evenly;
   }
-  @media screen and (min-width: 20rem) and (max-width: 48rem) {
+  @media screen and (min-width: 320px) and (max-width: 768px) {
     flex-direction: column;
   }
 `;
