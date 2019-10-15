@@ -4,8 +4,6 @@
 
 ## Screenshots
 
----
-
 ### Getting started
 
 To run this project you need any package manager such as [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com). Clone this repository and run start command :
@@ -24,8 +22,6 @@ cd aviasales-frontend-demo
 yarn start
 npm start
 ```
-
----
 
 ### Contributing
 
