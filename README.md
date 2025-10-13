@@ -13,21 +13,15 @@ To run this project you need any package manager such as [yarn](https://yarnpkg.
 ```
 git clone https://github.com/p1xar/aviasales-frontend-demo.git
 cd aviasales-frontend-demo
-yarn start
-```
-
-or, if you're using old and slowly npm, run the following command:
-
-```
-git clone https://github.com/p1xar/aviasales-frontend-demo.git
-cd aviasales-frontend-demo
-yarn start
+npm install 
 npm start
+```
+```
 ```
 
 ### Contributing
 
-Contributions are always **welcome and recomended**. Here's how you can do it:
+Contributions are always **welcome**. Here's how you can do it:
 
 - Fork this repo ([here are your instructions](https://help.github.com/en/articles/fork-a-repo));
 - Clone this repo to your directory;
